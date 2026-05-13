@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hard Water Hair Guide · Dr. Pallavi Ahire-Shelke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #1B2D40;
+      --bg:      #F5F8FA;
+      --white:   #FFFFFF;
+      --blue:    #3A7CA5;
+      --lt-blue: #A8C8E0;
+      --sage-bg: #EBF3F9;
+      --warn-bg: #F0EEF8;
+      --border:  #C8DDE9;
+      --muted:   #6A8CA0;
+      --highlight:#DFF0F9;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .back-nav {
+      background: var(--bg);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-style: italic;
+    }
+    .back-nav a:hover { color: var(--blue); }
+
+    /* HEADER */
+    .site-header {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(58,124,165,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(168,200,224,0.18) 0%, transparent 55%);
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      border: 1.5px solid var(--lt-blue);
+      background: var(--white);
+      color: var(--blue);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .site-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 7vw, 36px);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .site-header h1 em { font-style: italic; color: var(--lt-blue); }
+    .site-header .subline { color: var(--lt-blue); font-size: 13px; max-width: 330px; margin: 0 auto 16px; opacity: 0.9; }
+    .site-header .byline { color: var(--muted); font-size: 11px; margin-bottom: 8px; }
+    .site-header .philosophy { font-style: italic; color: var(--muted); font-size: 11px; }
+    .dots { margin: 16px 0 0; color: var(--lt-blue); letter-spacing: 8px; font-size: 10px; }
+
+    .wrapper { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 28px 0; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+    .card-blue  { border-left: 4px solid var(--blue); }
+    .card-warn  { background: var(--warn-bg); border-left: 4px solid var(--dark); }
+    .card-sage  { background: var(--sage-bg); border-left: 4px solid var(--blue); }
+    .card h2 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--dark); margin-bottom: 12px; }
+    .card p  { font-size: 14px; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* CITY PILLS */
+    .city-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .city-pill {
+      background: var(--highlight);
+      border: 1px solid var(--lt-blue);
+      color: var(--blue);
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    /* QUOTE BANNER */
+    .quote-banner {
+      background: var(--sage-bg);
+      border-left: 4px solid var(--blue);
+      border-radius: 12px;
+      padding: 20px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .quote-banner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .quote-banner cite { font-size: 12px; color: var(--muted); }
+
+    /* DARK BANNER */
+    .dark-banner {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 10%, rgba(58,124,165,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(168,200,224,0.12) 0%, transparent 55%);
+      border-radius: 18px;
+      padding: 28px 22px;
+      margin-bottom: 16px;
+    }
+    .dark-banner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+    .dark-banner p { font-size: 13px; color: var(--lt-blue); }
+
+    /* STAT CARDS */
+    .stat-grid { display: flex; flex-direction: column; gap: 14px; }
+    .stat-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-num {
+      position: absolute; top: 8px; right: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; color: var(--border); line-height: 1; pointer-events: none;
+    }
+    .stat-card h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--dark); margin-bottom: 6px; }
+    .stat-card p  { font-size: 13px; color: var(--muted); }
+
+    /* SIGNS LIST */
+    .signs-list { display: flex; flex-direction: column; gap: 8px; }
+    .sign-item {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+    }
+    .sign-dot { color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* HOME TEST */
+    .home-test {
+      background: var(--warn-bg);
+      border: 1.5px solid #C4BEE0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .home-test .ht-label {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #8B7CC8; margin-bottom: 6px;
+    }
+    .home-test p { font-size: 13px; color: var(--dark); }
+
+    /* MISTAKE CARDS */
+    .mistake-card {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--dark);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .mistake-card .mx { color: var(--dark); font-weight: 700; flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+    .mistake-card .mb h4 { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 3px; }
+    .mistake-card .mb p  { font-size: 12px; color: var(--muted); margin: 0; }
+
+    /* SOLUTION STEPS */
+    .solution-step {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 14px;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .sol-num {
+      width: 34px; height: 34px;
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px; flex-shrink: 0; margin-top: 2px;
+    }
+    .sol-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 6px; }
+    .sol-body p  { font-size: 13px; color: var(--muted); margin: 0; }
+    .sol-badge {
+      display: inline-block;
+      background: var(--white);
+      border: 1.5px solid var(--blue);
+      color: var(--blue);
+      font-size: 10px; letter-spacing: 0.1em;
+      padding: 3px 10px; border-radius: 999px; margin-top: 10px;
+    }
+
+    /* ROUTINE BLOCK */
+    .routine-block {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .routine-block-header {
+      background: var(--sage-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+    }
+    .routine-block-header .rh-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 2px; }
+    .routine-block-header h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--dark); }
+    .routine-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .routine-item:last-child { border-bottom: none; }
+    .ri-dot {
+      width: 22px; height: 22px;
+      background: var(--dark); color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-family: 'Playfair Display', serif;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .ri-title { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); }
+    .ri-note  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* INGREDIENT TABLE */
+    .ing-table { display: flex; flex-direction: column; gap: 10px; }
+    .ing-row {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .ing-row.key-row { border-left: 4px solid var(--blue); }
+    .ing-row .ir-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px; color: var(--dark);
+      min-width: 130px; flex-shrink: 0;
+    }
+    .ing-row .ir-desc { font-size: 12px; color: var(--muted); flex: 1; }
+    .ing-badge {
+      display: inline-block;
+      background: var(--highlight);
+      color: var(--blue);
+      font-size: 10px; padding: 2px 8px;
+      border-radius: 999px; border: 1px solid var(--lt-blue);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .ing-badge.avoid { background: #FBF0EE; color: #C0504A; border-color: #E0B0AA; }
+    .ing-badge.limit { background: #FBF5E4; color: #B07830; border-color: #DDB870; }
+
+    /* SHOWER FILTER GRID */
+    .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .filter-grid { grid-template-columns: 1fr; } }
+    .filter-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-top: 3px solid var(--blue);
+      border-radius: 12px;
+      padding: 14px 14px 12px;
+    }
+    .filter-card h3 { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 6px; }
+    .filter-card p  { font-size: 12px; color: var(--muted); }
+
+    /* DOS DONTS */
+    .dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 500px) { .dos-donts { grid-template-columns: 1fr; } }
+    .do-col, .dont-col { border-radius: 14px; overflow: hidden; }
+    .do-col .col-head {
+      background: var(--sage-bg); border-bottom: 2px solid var(--blue);
+      padding: 10px 14px;
+      font-family: 'Playfair Display', serif; font-size: 14px; color: var(--blue);
+    }
+    .dont-col .col-head {
+      background: var(--warn-bg); border-bottom: 2px solid var(--dark);
+      padding: 10px 14px;
+      font-family: 'Playfair Display', serif; font-size: 14px; color: var(--dark);
+    }
+    .do-item, .dont-item {
+      padding: 10px 14px; font-size: 13px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      display: flex; gap: 8px; align-items: flex-start;
+    }
+    .do-item:last-child, .dont-item:last-child { border-bottom: none; }
+    .do-item .chk  { color: var(--blue); font-weight: 700; flex-shrink: 0; }
+    .dont-item .x  { color: var(--dark); font-weight: 700; flex-shrink: 0; }
+
+    /* CHECKLIST */
+    .checklist { display: flex; flex-direction: column; gap: 8px; }
+    .check-item {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex; gap: 10px; align-items: center;
+      font-size: 13px; color: var(--dark);
+    }
+    .check-item .check-box {
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 4px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--blue);
+    }
+
+    /* PHILOSOPHY */
+    .philosophy-card {
+      background: var(--sage-bg);
+      border-radius: 16px; padding: 28px 22px; text-align: center;
+    }
+    .philosophy-card .small-label {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 12px;
+    }
+    .philosophy-card h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card p  { font-size: 14px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card em { font-style: italic; color: var(--blue); }
+
+    /* ALT BEAUTY */
+    .alt-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 16px; }
+    .alt-card-header { background: var(--sage-bg); padding: 14px 18px; border-bottom: 1px solid var(--border); }
+    .alt-card-header .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 2px; }
+    .alt-card-header h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--dark); }
+    .alt-product-row {
+      display: flex; gap: 12px; align-items: center; padding: 14px 18px;
+      text-decoration: none; color: inherit; transition: background 0.15s;
+      border-bottom: 1px solid var(--border);
+    }
+    .alt-product-row:last-child { border-bottom: none; }
+    .alt-product-row:hover { background: var(--sage-bg); }
+    .alt-emoji { font-size: 26px; width: 42px; height: 42px; background: var(--sage-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .alt-info h4 { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 2px; }
+    .alt-info p  { font-size: 12px; color: var(--muted); }
+    .alt-info .link { font-size: 11px; color: var(--blue); font-style: italic; }
+
+    /* CONTACT */
+    .contact-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .contact-header {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 15%, rgba(58,124,165,0.55) 0%, transparent 55%);
+      padding: 22px 20px; text-align: center;
+    }
+    .contact-header h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 4px; }
+    .contact-header .creds  { font-size: 11px; color: var(--lt-blue); margin-bottom: 6px; }
+    .contact-header .tagline { font-size: 12px; color: var(--muted); font-style: italic; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 400px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-cell {
+      padding: 14px 16px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
+      text-decoration: none; color: inherit; transition: background 0.15s;
+    }
+    .contact-cell:nth-child(even)       { border-right: none; }
+    .contact-cell:nth-last-child(-n+2)  { border-bottom: none; }
+    .contact-cell:hover { background: var(--sage-bg); }
+    .cc-icon   { font-size: 18px; margin-bottom: 4px; }
+    .cc-label  { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--dark); }
+    .cc-detail { font-size: 11px; color: var(--muted); }
+    .cc-action { font-size: 11px; color: var(--blue); font-style: italic; margin-top: 2px; }
+
+    .disclaimer { text-align: center; font-size: 11px; color: var(--muted); padding: 20px 16px; max-width: 440px; margin: 0 auto; }
+
+    footer {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(58,124,165,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(168,200,224,0.08) 0%, transparent 55%);
+      padding: 28px 20px 0;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 480px; margin: 0 auto; padding-bottom: 20px; }
+    @media (max-width: 400px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lt-blue); margin-bottom: 8px; }
+    .footer-col p  { font-size: 12px; color: var(--lt-blue); line-height: 1.6; opacity: 0.8; }
+    .footer-col p em { font-style: italic; opacity: 0.7; }
+    .footer-divider { max-width: 480px; margin: 0 auto; border: none; border-top: 1px solid rgba(58,124,165,0.3); }
+    .footer-bottom { max-width: 480px; margin: 0 auto; display: flex; justify-content: space-between; padding: 12px 0 16px; flex-wrap: wrap; gap: 4px; }
+    .footer-bottom span { font-size: 10px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav class="back-nav"><a href="index.html">← All Guides</a></nav>
+
+  <header class="site-header">
+    <div class="pill">YOUR HARD WATER HAIR GUIDE</div>
+    <h1>Your Water Is<br><em>Damaging Your Hair.</em></h1>
+    <p class="subline">Pune &amp; Mumbai water is silently affecting hair quality for millions. Here's exactly what to do about it.</p>
+    <p class="byline">Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV · Gold Medalist Dermatologist · Skin Ethics Clinic, Baner, Pune</p>
+    <p class="philosophy">Inner &amp; Outer Beauty · Wholesome Beauty</p>
+    <div class="dots">· · ·</div>
+  </header>
+
+  <!-- WELCOME -->
+  <section>
+    <div class="wrapper">
+      <div class="card card-blue">
+        <h2>What hard water actually does to your hair 🔬</h2>
+        <p>Hard water contains high concentrations of dissolved calcium and magnesium. In cities like Pune, Mumbai, Delhi, and Bengaluru, the TDS of tap water often ranges between 300–900 mg/L — well above the ideal 150–300 mg/L.</p>
+        <p>When hard water contacts your hair shaft, these minerals bind to proteins on the surface, forming a mineral crust that lifts the cuticle, blocks moisture, prevents shampoos from working properly, and over time makes your hair rough, dull, and brittle.</p>
+        <p>Think of it like limescale inside a kettle — the same deposits form on your hair, and the longer you're exposed, the worse it gets.</p>
+        <div class="city-pills">
+          <span class="city-pill">Pune</span>
+          <span class="city-pill">Mumbai</span>
+          <span class="city-pill">Delhi</span>
+          <span class="city-pill">Bengaluru</span>
+          <span class="city-pill">Chennai</span>
+          <span class="city-pill">Hyderabad</span>
+        </div>
+      </div>
+
+      <div class="quote-banner">
+        <blockquote>"If your shampoo isn't the problem and your diet is fine — check your water. It's the most overlooked cause of hair damage I see in clinic."</blockquote>
+        <cite>— Dr. Pallavi Ahire-Shelke</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">SIGNS YOUR HAIR IS HARD-WATER DAMAGED</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">If 3 or more of these sound familiar, hard water is likely the culprit.</p>
+      <div class="signs-list">
+        <div class="sign-item"><span class="sign-dot">●</span><span>Hair feels rough or straw-like after washing</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Dullness — no shine even after conditioning</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Scalp feels itchy or flaky (not dandruff)</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Hair tangles extremely easily</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Colour-treated hair fades very fast</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Shampoo doesn't lather well</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Excessive hair fall or breakage</span></div>
+        <div class="sign-item"><span class="sign-dot">●</span><span>Conditioner feels like it's doing nothing</span></div>
+      </div>
+      <div class="home-test">
+        <div class="ht-label">⚗️ Simple Home Test</div>
+        <p>Fill a clear bottle halfway with tap water. Add a few drops of pure soap. Shake vigorously. If you see very little lather and the water looks milky or cloudy — you have hard water.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISTAKES -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">COMMON MISTAKES PEOPLE MAKE</div>
+      <div class="mistake-card">
+        <span class="mx">✕</span>
+        <div class="mb"><h4>Using moisturising shampoos only</h4><p>They feel nice but do nothing to remove mineral buildup. The minerals keep blocking hydration.</p></div>
+      </div>
+      <div class="mistake-card">
+        <span class="mx">✕</span>
+        <div class="mb"><h4>Washing hair daily</h4><p>More washing = more mineral exposure, not less. Hair gets drier, not cleaner.</p></div>
+      </div>
+      <div class="mistake-card">
+        <span class="mx">✕</span>
+        <div class="mb"><h4>Applying oil on mineral-coated hair</h4><p>Oil cannot penetrate a mineral-sealed shaft. It just sits on the surface and attracts more dirt.</p></div>
+      </div>
+      <div class="mistake-card">
+        <span class="mx">✕</span>
+        <div class="mb"><h4>Using sulphate-heavy shampoos</h4><p>These strip natural oils without removing mineral deposits — leaving hair both dry and mineral-coated.</p></div>
+      </div>
+      <div class="mistake-card">
+        <span class="mx">✕</span>
+        <div class="mb"><h4>Rinsing with hot water</h4><p>Hot water opens the cuticle further, allowing more mineral absorption.</p></div>
+      </div>
+      <div class="mistake-card">
+        <span class="mx">✕</span>
+        <div class="mb"><h4>Ignoring the water quality entirely</h4><p>Buying expensive hair products without addressing the root cause — the water itself — will never give lasting results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUTH BANNER -->
+  <section>
+    <div class="wrapper">
+      <div class="dark-banner">
+        <blockquote>"The real solution has two parts: remove existing mineral buildup, and prevent new deposits from forming. No product alone can do both."</blockquote>
+        <p>Chelation removes what's already there. Cold rinses and the right ingredients prevent new buildup. Both are required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">SCIENTIFICALLY CORRECT SOLUTIONS</div>
+
+      <div class="solution-step">
+        <div class="sol-num">1</div>
+        <div class="sol-body">
+          <h3>🧪 Chelation — Remove the mineral buildup</h3>
+          <p>Use a chelating or clarifying shampoo once a week. Chelating agents (like EDTA or citric acid) chemically bind to calcium and magnesium ions and lift them off the hair shaft. Regular shampoos cannot do this.</p>
+          <div class="sol-badge">Once a week</div>
+        </div>
+      </div>
+
+      <div class="solution-step">
+        <div class="sol-num">2</div>
+        <div class="sol-body">
+          <h3>💧 Restore the moisture barrier</h3>
+          <p>After chelation, hair temporarily loses some moisture. Follow with a protein and moisture conditioner or hair mask containing keratin, amino acids, or panthenol to rebuild the cuticle.</p>
+          <div class="sol-badge">After every chelation wash</div>
+        </div>
+      </div>
+
+      <div class="solution-step">
+        <div class="sol-num">3</div>
+        <div class="sol-body">
+          <h3>🍏 Pre-wash ACV rinse (optional but powerful)</h3>
+          <p>Before shampooing, rinse hair with diluted apple cider vinegar — 2 tablespoons in 1 cup of water. The mild acidity dissolves mineral deposits and closes the cuticle. Let it sit 3–5 minutes, then wash normally.</p>
+          <div class="sol-badge">1–2x per week</div>
+        </div>
+      </div>
+
+      <div class="solution-step">
+        <div class="sol-num">4</div>
+        <div class="sol-body">
+          <h3>❄️ Cold water final rinse</h3>
+          <p>Always end your wash with the coldest water you can manage. Cold water seals the cuticle shut, locking in moisture and preventing mineral absorption on the next wash.</p>
+          <div class="sol-badge">Every single wash</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUTINE -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">YOUR HAIR CARE ROUTINE</div>
+
+      <div class="routine-block">
+        <div class="routine-block-header">
+          <div class="rh-label">Daily — Non-Wash Days</div>
+          <h3>🪮 Maintenance Between Washes</h3>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">1</div>
+          <div>
+            <div class="ri-title">Lightweight leave-in</div>
+            <div class="ri-note">A small amount of leave-in conditioner or argan-oil serum on mid-lengths and ends</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">2</div>
+          <div>
+            <div class="ri-title">Detangle gently</div>
+            <div class="ri-note">Wide-tooth comb only on slightly damp hair — never bone-dry</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">3</div>
+          <div>
+            <div class="ri-title">Protect at night</div>
+            <div class="ri-note">Satin or silk pillowcase to reduce friction-related cuticle damage</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="routine-block">
+        <div class="routine-block-header">
+          <div class="rh-label">Wash Days — 2–3x Per Week</div>
+          <h3>🚿 The Wash Routine</h3>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">1</div>
+          <div>
+            <div class="ri-title">Pre-rinse</div>
+            <div class="ri-note">Diluted ACV rinse for 3–5 min OR pre-wash oil massage the night before</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">2</div>
+          <div>
+            <div class="ri-title">Shampoo (gentle / sulphate-free)</div>
+            <div class="ri-note">Massage only the scalp — don't pile hair on top of your head</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">3</div>
+          <div>
+            <div class="ri-title">Condition mid-length to ends</div>
+            <div class="ri-note">Panthenol, glycerin, or amino-acid conditioner — wait 3–5 minutes</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">4</div>
+          <div>
+            <div class="ri-title">Cold final rinse</div>
+            <div class="ri-note">Coldest water possible — seals the cuticle</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">5</div>
+          <div>
+            <div class="ri-title">Pat dry gently</div>
+            <div class="ri-note">Microfibre towel — no rubbing. Air dry or diffuse on low heat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="routine-block">
+        <div class="routine-block-header">
+          <div class="rh-label">Weekly — Once Per Week</div>
+          <h3>🌿 Deep Treatment</h3>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">1</div>
+          <div>
+            <div class="ri-title">Chelating shampoo wash</div>
+            <div class="ri-note">Replace your regular shampoo — lather, wait 2–3 min, rinse</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="ri-dot">2</div>
+          <div>
+            <div class="ri-title">Deep conditioning mask</div>
+            <div class="ri-note">Keratin, shea, or hibiscus mask for 15–30 min after chelation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS LOOK FOR -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">INGREDIENTS TO LOOK FOR</div>
+      <div class="ing-table">
+        <div class="ing-row key-row">
+          <span class="ir-name">EDTA / Disodium EDTA</span>
+          <span class="ir-desc">Primary chelating agent — binds and removes calcium &amp; magnesium deposits from hair shaft</span>
+          <span class="ing-badge">Key</span>
+        </div>
+        <div class="ing-row key-row">
+          <span class="ir-name">Citric Acid</span>
+          <span class="ir-desc">Natural chelator, balances scalp pH, dissolves mineral scale</span>
+          <span class="ing-badge">Key</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Phytic Acid</span>
+          <span class="ir-desc">Plant-derived chelator, gentler option for sensitive scalps</span>
+          <span class="ing-badge">Look for</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Panthenol (Pro-B5)</span>
+          <span class="ir-desc">Deeply moisturises and repairs hair shaft, improves elasticity</span>
+          <span class="ing-badge">Look for</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Hydrolysed Keratin</span>
+          <span class="ir-desc">Fills gaps in damaged cuticle, reduces breakage</span>
+          <span class="ing-badge">Look for</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Glycerin</span>
+          <span class="ir-desc">Humectant — draws moisture into the hair shaft</span>
+          <span class="ing-badge">Look for</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS AVOID -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">INGREDIENTS TO AVOID</div>
+      <div class="ing-table">
+        <div class="ing-row">
+          <span class="ir-name">Sodium Lauryl Sulphate (SLS)</span>
+          <span class="ir-desc">Strips oils without removing minerals — leaves hair dry and mineral-coated</span>
+          <span class="ing-badge avoid">Avoid</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Silicones (dimethicone)</span>
+          <span class="ir-desc">Coat the shaft and trap minerals underneath, worsening buildup over time</span>
+          <span class="ing-badge avoid">Avoid</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">High-pH Shampoos (pH &gt; 6)</span>
+          <span class="ir-desc">Open the cuticle, making it easier for minerals to deposit inside the shaft</span>
+          <span class="ing-badge avoid">Avoid</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Heavy Waxes &amp; Butters</span>
+          <span class="ir-desc">Can seal minerals into the shaft and are hard to wash out with hard water</span>
+          <span class="ing-badge limit">Limit</span>
+        </div>
+        <div class="ing-row">
+          <span class="ir-name">Dry Shampoos (daily use)</span>
+          <span class="ir-desc">Powder particles attract mineral ions, accelerating scalp buildup</span>
+          <span class="ing-badge limit">Limit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWER FILTERS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">ROLE OF SHOWER FILTERS</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">A shower filter reduces (but doesn't eliminate) mineral content. Helpful if your TDS is above 500 mg/L — but not a replacement for a chelating shampoo routine.</p>
+      <div class="filter-grid">
+        <div class="filter-card">
+          <h3>KDF-55 / Redox Filters</h3>
+          <p>Removes chlorine and some heavy metals. Good for city water with chlorination.</p>
+        </div>
+        <div class="filter-card">
+          <h3>Vitamin C Filters</h3>
+          <p>Neutralises chlorine effectively. Best for dry, colour-treated hair.</p>
+        </div>
+        <div class="filter-card">
+          <h3>Ion-Exchange Softeners</h3>
+          <p>Most effective — replaces Ca²⁺/Mg²⁺ with sodium ions. Significant investment, best results.</p>
+        </div>
+        <div class="filter-card">
+          <h3>Shower-Head Filters</h3>
+          <p>Affordable, easy to install. Moderate reduction in hardness — best combined with chelating shampoo.</p>
+        </div>
+      </div>
+      <div class="card card-blue" style="margin-top:14px;">
+        <p style="font-size:13px;"><strong>Honest note:</strong> No shower filter fully replaces a chelating shampoo routine. Think of the filter as reducing your mineral load, and the chelating shampoo as the main treatment. Both together = best results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOS DONTS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">DO'S &amp; DON'TS</div>
+      <div class="dos-donts">
+        <div class="do-col">
+          <div class="col-head">✔ Do</div>
+          <div class="do-item"><span class="chk">✔</span><span>Chelating shampoo once a week</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Always finish with cold water rinse</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Pre-rinse with diluted ACV weekly</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Deep condition after every chelation</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Wash hair only 2–3x per week</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Use a satin pillowcase at night</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Test your water TDS (kits ₹200–₹500)</span></div>
+        </div>
+        <div class="dont-col">
+          <div class="col-head">✕ Don't</div>
+          <div class="dont-item"><span class="x">✕</span><span>Wash hair daily with hard water</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Use hot water for shampooing</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Layer silicones over mineral buildup</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Skip conditioner after any wash</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Rub hair vigorously with a rough towel</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Apply oil before chelating the buildup</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Ignore a flaky, itchy scalp</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO SEE DERM -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">WHEN TO SEE A DERMATOLOGIST</div>
+      <div class="card card-warn">
+        <h2 style="font-size:16px;margin-bottom:12px;">See Dr. Pallavi if you notice any of the following:</h2>
+        <div class="signs-list">
+          <div class="sign-item"><span class="sign-dot">⚠</span><span>Hair fall exceeding 100–150 strands/day for more than 4 weeks</span></div>
+          <div class="sign-item"><span class="sign-dot">⚠</span><span>Visible patchy baldness or hairline recession</span></div>
+          <div class="sign-item"><span class="sign-dot">⚠</span><span>Red, oozing, or crusting patches on the scalp</span></div>
+          <div class="sign-item"><span class="sign-dot">⚠</span><span>No improvement in hair texture after 8–12 weeks of proper routine</span></div>
+          <div class="sign-item"><span class="sign-dot">⚠</span><span>Sudden dramatic hair fall (possible telogen effluvium)</span></div>
+          <div class="sign-item"><span class="sign-dot">⚠</span><span>Scalp feels persistently sore, hot, or tender</span></div>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:14px;">Hard water damage is real but manageable at home. If a consistent routine isn't helping, something else may be going on — and a dermatologist can identify it accurately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">QUICK CHECKLIST — SAVE THIS ⭐</div>
+      <div class="checklist">
+        <div class="check-item"><div class="check-box">✓</div><span>I wash hair 2–3 times a week (not daily)</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I use a chelating shampoo once a week</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I follow chelation with a deep conditioning mask</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I do an ACV pre-rinse at least once a week</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>My shampoo is sulphate-free or low-sulphate</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>My conditioner contains panthenol or amino acids</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I always finish with a cold water rinse</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I pat dry — no rubbing with a rough towel</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I sleep on a satin or silk pillowcase</span></div>
+        <div class="check-item"><div class="check-box">✓</div><span>I've tested my water TDS or know it's hard water</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALT BEAUTY -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">DR. PALLAVI RECOMMENDS</div>
+      <div class="alt-card">
+        <div class="alt-card-header">
+          <div class="label">Alt Beauty · Skin &amp; Hair First Formulations</div>
+          <h3>Protect Your Hair — Start With Sunscreen for Your Scalp</h3>
+        </div>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/products/smart-sunscreen" target="_blank">
+          <div class="alt-emoji">☀️</div>
+          <div class="alt-info">
+            <h4>Alt Beauty Smart Sunscreen</h4>
+            <p>Protect skin from UV damage while your hair routine works from within.</p>
+            <span class="link">Shop at thealtbeauty.com →</span>
+          </div>
+        </a>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/" target="_blank">
+          <div class="alt-emoji">🌿</div>
+          <div class="alt-info">
+            <h4>Explore Alt Beauty Range</h4>
+            <p>Clean, effective formulations for Indian skin and hair.</p>
+            <span class="link">Visit thealtbeauty.com →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <div class="wrapper">
+      <div class="philosophy-card">
+        <div class="small-label">THE PHILOSOPHY BEHIND THIS GUIDE</div>
+        <h2>Inner &amp; Outer Beauty.</h2>
+        <p>Wholesome beauty means understanding the environment your hair lives in — not just what you put on it. Your city's water is part of your haircare routine whether you acknowledge it or not. Now that you do, you have everything you need to work with it, not against it.</p>
+        <em>Because real glow starts from within.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">BOOK A CONSULTATION</div>
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Dr. Pallavi Ahire-Shelke</h2>
+          <p class="creds">MBBS, MD, DNB, DDV · Gold Medalist Dermatologist</p>
+          <p class="tagline">For personalised hair &amp; scalp treatment</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cell"><div class="cc-icon">📍</div><div class="cc-label">Clinic</div><div class="cc-detail">Skin Ethics Clinic, Baner, Pune</div></div>
+          <a class="contact-cell" href="tel:+919028291234"><div class="cc-icon">📞</div><div class="cc-label">Phone</div><div class="cc-detail">+91 90282 91234</div><div class="cc-action">Book a consultation</div></a>
+          <a class="contact-cell" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank"><div class="cc-icon">📸</div><div class="cc-label">Instagram</div><div class="cc-detail">@drpallaviahireshelke</div><div class="cc-action">Daily skin &amp; hair tips</div></a>
+          <a class="contact-cell" href="https://wa.me/919028291234" target="_blank"><div class="cc-icon">💬</div><div class="cc-label">WhatsApp</div><div class="cc-detail">Quick queries welcome</div><div class="cc-action">Message us</div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    This guide is for educational purposes only and does not constitute medical advice. Haircare recommendations are general in nature. Please consult a qualified dermatologist if you experience persistent hair loss or scalp conditions.
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Contact</h4><p>Skin Ethics Clinic<br>Baner, Pune<br>+91 90282 91234</p></div>
+      <div class="footer-col"><h4>Follow Us</h4><p>@drpallaviahireshelke<br>Instagram<br><em>Wholesome Beauty · Inner &amp; Outer</em></p></div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV</span>
+      <span>Skin Ethics Clinic, Baner, Pune</span>
+    </div>
+  </footer>
+
+</body>
+</html>

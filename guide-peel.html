@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemical Peel Guide · Dr. Pallavi Ahire-Shelke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #2A1E16;
+      --bg:      #FAF7F4;
+      --white:   #FFFFFF;
+      --amber:   #B87040;
+      --lt-amber:#E0B898;
+      --sage-bg: #F5EDE4;
+      --warn-bg: #F5F1EE;
+      --border:  #E0CEC0;
+      --muted:   #9A7860;
+      --highlight:#FBF1E8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .back-nav {
+      background: var(--bg);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-nav a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--muted); text-decoration: none; font-style: italic;
+    }
+    .back-nav a:hover { color: var(--amber); }
+
+    /* HEADER */
+    .site-header {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(184,112,64,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(224,184,152,0.18) 0%, transparent 55%);
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      border: 1.5px solid var(--lt-amber);
+      background: var(--white);
+      color: var(--amber);
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .site-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 7vw, 36px);
+      color: var(--white); line-height: 1.25; margin-bottom: 10px;
+    }
+    .site-header h1 em { font-style: italic; color: var(--lt-amber); }
+    .site-header .subline { color: var(--lt-amber); font-size: 13px; max-width: 330px; margin: 0 auto 16px; opacity: 0.9; }
+    .site-header .byline  { color: var(--muted); font-size: 11px; margin-bottom: 8px; }
+    .site-header .philosophy { font-style: italic; color: var(--muted); font-size: 11px; }
+    .dots { margin: 16px 0 0; color: var(--lt-amber); letter-spacing: 8px; font-size: 10px; }
+
+    .wrapper { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 28px 0; }
+
+    .section-label {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 18px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 22px 20px; margin-bottom: 16px;
+    }
+    .card-amber { border-left: 4px solid var(--amber); }
+    .card-warn  { background: var(--warn-bg); border-left: 4px solid var(--dark); }
+    .card-sage  { background: var(--sage-bg); border-left: 4px solid var(--amber); }
+    .card h2 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--dark); margin-bottom: 12px; }
+    .card p  { font-size: 14px; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* QUOTE BANNER */
+    .quote-banner {
+      background: var(--sage-bg); border-left: 4px solid var(--amber);
+      border-radius: 12px; padding: 20px; margin-bottom: 16px; text-align: center;
+    }
+    .quote-banner blockquote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 17px; color: var(--dark); line-height: 1.5; margin-bottom: 8px;
+    }
+    .quote-banner cite { font-size: 12px; color: var(--muted); }
+
+    /* DARK BANNER */
+    .dark-banner {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 10%, rgba(184,112,64,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(224,184,152,0.12) 0%, transparent 55%);
+      border-radius: 18px; padding: 28px 22px; margin-bottom: 16px;
+    }
+    .dark-banner blockquote {
+      font-family: 'Playfair Display', serif; font-size: 19px;
+      color: var(--white); line-height: 1.45; margin-bottom: 12px;
+    }
+    .dark-banner p { font-size: 13px; color: var(--lt-amber); }
+
+    /* PEEL TYPE CARDS */
+    .peel-cards { display: flex; flex-direction: column; gap: 14px; }
+    .peel-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 18px 18px 14px;
+      position: relative; overflow: hidden;
+    }
+    .peel-level {
+      position: absolute; top: 10px; right: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 44px; color: var(--border); line-height: 1; pointer-events: none;
+    }
+    .peel-card-badge {
+      display: inline-block;
+      background: var(--highlight);
+      border: 1.5px solid var(--lt-amber);
+      color: var(--amber);
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .peel-card h3 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--dark); margin-bottom: 6px; }
+    .peel-card p  { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    .peel-card p:last-child { margin-bottom: 0; }
+    .peel-card .peel-used { font-size: 11px; color: var(--amber); font-style: italic; margin-top: 6px; }
+
+    /* MYTH CARDS */
+    .myth-card {
+      background: var(--warn-bg); border-left: 4px solid var(--dark);
+      border-radius: 12px; padding: 16px 16px; margin-bottom: 12px;
+    }
+    .myth-row {
+      display: flex; gap: 8px; align-items: flex-start;
+      font-size: 13px; margin-bottom: 8px;
+    }
+    .myth-row:last-child { margin-bottom: 0; }
+    .myth-row .mx { color: var(--dark); font-weight: 700; flex-shrink: 0; }
+    .myth-row .chk { color: var(--amber); font-weight: 700; flex-shrink: 0; }
+
+    /* BENEFITS LIST */
+    .benefit-list { display: flex; flex-direction: column; gap: 10px; }
+    .benefit-item {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-left: 4px solid var(--amber);
+      border-radius: 12px; padding: 14px 16px;
+      display: flex; gap: 10px; align-items: center;
+      font-size: 13px; color: var(--dark);
+    }
+    .benefit-icon { font-size: 20px; flex-shrink: 0; }
+
+    /* PROCEDURE STEPS */
+    .proc-step {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 16px 18px 14px; margin-bottom: 12px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .proc-num {
+      width: 32px; height: 32px;
+      background: var(--dark); color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 14px;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .proc-body h3 { font-family: 'Playfair Display', serif; font-size: 15px; margin-bottom: 4px; }
+    .proc-body p  { font-size: 13px; color: var(--muted); margin: 0; }
+
+    /* RECOVERY TIMELINE */
+    .recovery { position: relative; padding-left: 24px; }
+    .recovery::before {
+      content: ''; position: absolute; left: 9px; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .rec-item {
+      position: relative; margin-bottom: 16px; padding-left: 20px;
+    }
+    .rec-item::before {
+      content: ''; position: absolute; left: -20px; top: 6px;
+      width: 12px; height: 12px;
+      background: var(--amber); border-radius: 50%; border: 2px solid var(--bg);
+    }
+    .rec-item h3 { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--amber); margin-bottom: 4px; }
+    .rec-item p  { font-size: 13px; color: var(--muted); }
+
+    /* PRE POST CARE */
+    .care-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .care-grid { grid-template-columns: 1fr; } }
+    .care-col { border-radius: 14px; overflow: hidden; }
+    .care-col .col-head {
+      padding: 12px 14px;
+      font-family: 'Playfair Display', serif; font-size: 14px;
+    }
+    .pre-head { background: var(--warn-bg); border-bottom: 2px solid var(--dark); color: var(--dark); }
+    .post-head { background: var(--sage-bg); border-bottom: 2px solid var(--amber); color: var(--amber); }
+    .care-item {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 10px 14px; font-size: 13px;
+      display: flex; gap: 8px; align-items: flex-start;
+    }
+    .care-item:last-child { border-bottom: none; }
+    .pre-dot { color: var(--dark); font-weight: 700; flex-shrink: 0; }
+    .post-dot { color: var(--amber); font-weight: 700; flex-shrink: 0; }
+
+    /* SESSIONS CARD */
+    .sessions-card {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 10%, rgba(184,112,64,0.5) 0%, transparent 55%);
+      border-radius: 14px; padding: 22px 20px; text-align: center;
+    }
+    .sessions-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); margin-bottom: 10px; }
+    .sessions-card p  { font-size: 13px; color: var(--lt-amber); margin-bottom: 8px; }
+    .sessions-card p:last-child { margin-bottom: 0; }
+    .sessions-num {
+      font-family: 'Playfair Display', serif; font-size: 48px;
+      color: var(--lt-amber); line-height: 1; margin: 10px 0;
+    }
+
+    /* WHO SHOULD AVOID */
+    .avoid-list { display: flex; flex-direction: column; gap: 10px; }
+    .avoid-item {
+      background: var(--warn-bg); border-left: 4px solid var(--dark);
+      border-radius: 10px; padding: 12px 14px;
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 13px; color: var(--dark);
+    }
+    .avoid-item .ax { color: var(--dark); font-weight: 700; flex-shrink: 0; }
+
+    /* CHECKLIST */
+    .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .checklist-grid { grid-template-columns: 1fr; } }
+    .cl-col { border-radius: 14px; overflow: hidden; }
+    .cl-col .cl-head {
+      padding: 10px 14px; font-family: 'Playfair Display', serif; font-size: 14px;
+    }
+    .do-head  { background: var(--sage-bg); border-bottom: 2px solid var(--amber); color: var(--amber); }
+    .dont-head { background: var(--warn-bg); border-bottom: 2px solid var(--dark); color: var(--dark); }
+    .cl-item {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 10px 14px; font-size: 12px;
+      display: flex; gap: 8px; align-items: flex-start;
+    }
+    .cl-item:last-child { border-bottom: none; }
+    .cl-chk { color: var(--amber); font-weight: 700; flex-shrink: 0; }
+    .cl-x   { color: var(--dark); font-weight: 700; flex-shrink: 0; }
+
+    /* PHILOSOPHY */
+    .philosophy-card {
+      background: var(--sage-bg); border-radius: 16px; padding: 28px 22px; text-align: center;
+    }
+    .philosophy-card .small-label {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 12px;
+    }
+    .philosophy-card h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card p  { font-size: 14px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card em { font-style: italic; color: var(--amber); }
+
+    /* ALT BEAUTY */
+    .alt-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 16px; }
+    .alt-card-header { background: var(--sage-bg); padding: 14px 18px; border-bottom: 1px solid var(--border); }
+    .alt-card-header .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 2px; }
+    .alt-card-header h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--dark); }
+    .alt-product-row {
+      display: flex; gap: 12px; align-items: center; padding: 14px 18px;
+      text-decoration: none; color: inherit; transition: background 0.15s;
+      border-bottom: 1px solid var(--border);
+    }
+    .alt-product-row:last-child { border-bottom: none; }
+    .alt-product-row:hover { background: var(--sage-bg); }
+    .alt-emoji { font-size: 26px; width: 42px; height: 42px; background: var(--sage-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .alt-info h4 { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 2px; }
+    .alt-info p  { font-size: 12px; color: var(--muted); }
+    .alt-info .link { font-size: 11px; color: var(--amber); font-style: italic; }
+
+    /* CONTACT */
+    .contact-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .contact-header {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 15%, rgba(184,112,64,0.55) 0%, transparent 55%);
+      padding: 22px 20px; text-align: center;
+    }
+    .contact-header h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 4px; }
+    .contact-header .creds  { font-size: 11px; color: var(--lt-amber); margin-bottom: 6px; }
+    .contact-header .tagline { font-size: 12px; color: var(--muted); font-style: italic; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 400px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-cell {
+      padding: 14px 16px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
+      text-decoration: none; color: inherit; transition: background 0.15s;
+    }
+    .contact-cell:nth-child(even)       { border-right: none; }
+    .contact-cell:nth-last-child(-n+2)  { border-bottom: none; }
+    .contact-cell:hover { background: var(--sage-bg); }
+    .cc-icon   { font-size: 18px; margin-bottom: 4px; }
+    .cc-label  { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--dark); }
+    .cc-detail { font-size: 11px; color: var(--muted); }
+    .cc-action { font-size: 11px; color: var(--amber); font-style: italic; margin-top: 2px; }
+
+    .disclaimer { text-align: center; font-size: 11px; color: var(--muted); padding: 20px 16px; max-width: 440px; margin: 0 auto; }
+
+    footer {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(184,112,64,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(224,184,152,0.08) 0%, transparent 55%);
+      padding: 28px 20px 0;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 480px; margin: 0 auto; padding-bottom: 20px; }
+    @media (max-width: 400px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lt-amber); margin-bottom: 8px; }
+    .footer-col p  { font-size: 12px; color: var(--lt-amber); line-height: 1.6; opacity: 0.8; }
+    .footer-col p em { font-style: italic; opacity: 0.7; }
+    .footer-divider { max-width: 480px; margin: 0 auto; border: none; border-top: 1px solid rgba(184,112,64,0.3); }
+    .footer-bottom { max-width: 480px; margin: 0 auto; display: flex; justify-content: space-between; padding: 12px 0 16px; flex-wrap: wrap; gap: 4px; }
+    .footer-bottom span { font-size: 10px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav class="back-nav"><a href="index.html">← All Guides</a></nav>
+
+  <header class="site-header">
+    <div class="pill">YOUR CHEMICAL PEEL GUIDE</div>
+    <h1>Chemical Peel —<br><em>Does It Hurt?</em></h1>
+    <p class="subline">An honest, complete guide to one of dermatology's most effective skin renewal treatments.</p>
+    <p class="byline">Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV · Gold Medalist Dermatologist · Skin Ethics Clinic, Baner, Pune</p>
+    <p class="philosophy">Inner &amp; Outer Beauty · Wholesome Beauty</p>
+    <div class="dots">· · ·</div>
+  </header>
+
+  <!-- WELCOME -->
+  <section>
+    <div class="wrapper">
+      <div class="card card-amber">
+        <h2>Let me give you an honest answer. 🧴</h2>
+        <p>Chemical peel सुनते ही डर लग जाता है — but that fear is based on misinformation, not reality. Most patients feel nothing more than a mild tingling that settles in a few minutes.</p>
+        <p>A chemical peel is a controlled skin renewal treatment. A special solution is applied that increases skin turnover, gently removes dead skin cells, and helps fresh, healthy skin surface. When done by a qualified dermatologist, it is precise, safe, and effective.</p>
+        <p>If you've been struggling with acne marks, pigmentation, dull skin, or uneven texture — this guide is for you.</p>
+      </div>
+
+      <div class="quote-banner">
+        <blockquote>"People don't avoid chemical peels because of pain. They avoid them because they don't understand how precisely this treatment is designed."</blockquote>
+        <cite>— Dr. Pallavi Ahire-Shelke</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES OF PEELS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">TYPES OF PEELS — SIMPLIFIED</div>
+      <div class="peel-cards">
+
+        <div class="peel-card">
+          <span class="peel-level">I</span>
+          <div class="peel-card-badge">Superficial · Mild</div>
+          <h3>Fruit Acid Peels</h3>
+          <p>Uses glycolic acid or lactic acid (AHAs). Great for a quick glow, mild detan, and improving skin texture. Almost no visible peeling — skin may just look brighter.</p>
+          <p class="peel-used">Best for: Dull skin, mild pigmentation, first-time peel patients</p>
+        </div>
+
+        <div class="peel-card">
+          <span class="peel-level">II</span>
+          <div class="peel-card-badge">Medium Depth</div>
+          <h3>TCA &amp; Combination Peels</h3>
+          <p>Goes deeper to target acne marks and significant pigmentation. You may see some actual skin shedding for a few days — like fine, flour-like peeling. Not dramatic, but visible.</p>
+          <p class="peel-used">Best for: Post-acne marks, melasma, open pores, uneven texture</p>
+        </div>
+
+        <div class="peel-card">
+          <span class="peel-level">III</span>
+          <div class="peel-card-badge">Deep · Clinical</div>
+          <h3>Phenol &amp; Deep Peels</h3>
+          <p>Targets severe scarring or deep wrinkles. Requires significant downtime and careful monitoring. Less common for routine skincare — always done in a clinical setting.</p>
+          <p class="peel-used">Best for: Severe scarring, deep wrinkles — always under dermatologist care</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD CONSIDER -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">IS THIS FOR YOU?</div>
+      <div class="benefit-list">
+        <div class="benefit-item"><span class="benefit-icon">🔴</span><span><strong>Post-acne marks</strong> — Those stubborn brown or red spots left after pimples</span></div>
+        <div class="benefit-item"><span class="benefit-icon">🎭</span><span><strong>Pigmentation</strong> — Uneven skin tone, dark patches, or melasma</span></div>
+        <div class="benefit-item"><span class="benefit-icon">😶</span><span><strong>Dull skin</strong> — Skin that looks tired or ashy regardless of what you apply</span></div>
+        <div class="benefit-item"><span class="benefit-icon">🔬</span><span><strong>Texture issues</strong> — Small bumps, open pores, or rough skin surface</span></div>
+        <div class="benefit-item"><span class="benefit-icon">☀️</span><span><strong>Sun tan &amp; damage</strong> — Accumulated UV exposure that's affected your skin tone</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYTHS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">MYTHS I BUST EVERY DAY IN CLINIC</div>
+
+      <div class="myth-card">
+        <div class="myth-row"><span class="mx">✕</span><strong>"Chemical peels thin my skin"</strong></div>
+        <div class="myth-row"><span class="chk">✔</span><span>Peels actually stimulate collagen production, which can make your skin feel firmer and healthier over time. Done correctly, they improve skin structure — they don't damage it.</span></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-row"><span class="mx">✕</span><strong>"It's very painful"</strong></div>
+        <div class="myth-row"><span class="chk">✔</span><span>Most people feel a slight tingling or mild warmth for 5–10 minutes during the procedure. It is entirely manageable and settles quickly. Pain is not a feature of a well-administered peel.</span></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-row"><span class="mx">✕</span><strong>"My skin will peel off like a snake"</strong></div>
+        <div class="myth-row"><span class="chk">✔</span><span>With modern mild-to-medium peels, shedding is often microscopic or appears as very mild dryness. You won't need to hide at home. The dramatic peeling images online are from older or deeper protocols.</span></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-row"><span class="mx">✕</span><strong>"Peels will darken Indian skin"</strong></div>
+        <div class="myth-row"><span class="chk">✔</span><span>When done correctly by a qualified dermatologist, peels are safe for all Indian skin tones. The risk of post-inflammatory hyperpigmentation exists only with improper protocols, incorrect acid choice, or unqualified procedures.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUTH BANNER -->
+  <section>
+    <div class="wrapper">
+      <div class="dark-banner">
+        <blockquote>"The key is not whether to do a peel — it's which peel is right for your skin condition and tone."</blockquote>
+        <p>The right peel, chosen correctly, can significantly improve how your skin looks and behaves over time. The formulation and depth must match your specific concern and skin type.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">BENEFITS YOU CAN EXPECT</div>
+      <div class="benefit-list">
+        <div class="benefit-item"><span class="benefit-icon">✨</span><span>Visible reduction in dark spots and post-acne pigmentation</span></div>
+        <div class="benefit-item"><span class="benefit-icon">🪞</span><span>Smoother skin texture — makeup sits better</span></div>
+        <div class="benefit-item"><span class="benefit-icon">💫</span><span>A natural, healthy glow that shows within one week</span></div>
+        <div class="benefit-item"><span class="benefit-icon">🧴</span><span>Better absorption of your daily serums and moisturisers</span></div>
+        <div class="benefit-item"><span class="benefit-icon">🔁</span><span>Improved skin turnover — younger-looking surface over time</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCEDURE -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">WHAT HAPPENS DURING THE PROCEDURE</div>
+
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <div class="proc-body">
+          <h3>🧼 Cleansing</h3>
+          <p>The doctor cleans your face to remove all traces of oil, sunscreen, and makeup before any solution is applied.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <div class="proc-body">
+          <h3>🖌️ Application</h3>
+          <p>The peel solution is applied with a brush or cotton tip in a precise, controlled manner — targeting specific concern areas.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <div class="proc-body">
+          <h3>💬 The Sensation</h3>
+          <p>You'll feel a prickly, itchy, or warm sensation — this is normal and lasts only a few minutes. Most patients describe it as very manageable.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <div class="proc-body">
+          <h3>💧 Neutralisation</h3>
+          <p>After the correct contact time, the doctor stops the peel with a neutralising solution or water. Timing is everything — this is why qualified supervision matters.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">5</div>
+        <div class="proc-body">
+          <h3>🛡️ Protection</h3>
+          <p>A soothing cream and sunscreen are applied. You leave with protected, treated skin ready to begin its renewal process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOVERY -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">RECOVERY — DAY BY DAY</div>
+      <div class="recovery">
+        <div class="rec-item">
+          <h3>Day 1</h3>
+          <p>Skin might look slightly pink or feel tight — similar to a very mild sunburn. Completely normal.</p>
+        </div>
+        <div class="rec-item">
+          <h3>Day 2–3</h3>
+          <p>Skin may look slightly darker or feel dry. This is the treated skin beginning its natural renewal process.</p>
+        </div>
+        <div class="rec-item">
+          <h3>Day 4–7</h3>
+          <p>Very fine, flour-like peeling may occur. Do not scrub it off — let it shed naturally. This is the old skin leaving.</p>
+        </div>
+        <div class="rec-item">
+          <h3>Day 7+</h3>
+          <p>Fresher, brighter, more even skin emerges. The visible glow typically appears around day 7–10 after the procedure.</p>
+        </div>
+        <div class="rec-item">
+          <h3>3 Sessions+</h3>
+          <p>Noticeable and lasting improvement in pigmentation, marks, and texture with a consistent series of sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE POST CARE -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">PRE-CARE &amp; POST-CARE</div>
+      <div class="care-grid">
+        <div class="care-col">
+          <div class="col-head pre-head">Before the Peel</div>
+          <div class="care-item"><span class="pre-dot">·</span><span>Stop retinoids or strong actives 3 days before</span></div>
+          <div class="care-item"><span class="pre-dot">·</span><span>Avoid threading, waxing, or bleaching for a week</span></div>
+          <div class="care-item"><span class="pre-dot">·</span><span>Inform your doctor about all current medications</span></div>
+          <div class="care-item"><span class="pre-dot">·</span><span>Apply SPF daily in the week leading up to the peel</span></div>
+        </div>
+        <div class="care-col">
+          <div class="col-head post-head">After the Peel</div>
+          <div class="care-item"><span class="post-dot">✔</span><span>Sunscreen SPF 30+ every 3–4 hours — your new skin is sensitive</span></div>
+          <div class="care-item"><span class="post-dot">✔</span><span>Moisturise generously — keep skin hydrated for healing</span></div>
+          <div class="care-item"><span class="post-dot">✔</span><span>Use only gentle cleanser and moisturiser for the first 5 days</span></div>
+          <div class="care-item"><span class="post-dot">✔</span><span>Never pick or pull at any peeling skin — causes permanent marks</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">HOW MANY SESSIONS?</div>
+      <div class="sessions-card">
+        <h3>Results are rarely one-and-done.</h3>
+        <div class="sessions-num">4–6</div>
+        <p>Sessions are typically needed for correcting pigmentation or acne marks.</p>
+        <p>Spaced <strong style="color:var(--white);">3–4 weeks apart</strong> — giving skin time to complete its renewal cycle between treatments.</p>
+        <p style="margin-top:10px;font-size:12px;opacity:0.7;">You'll see a glow after one session. Lasting, deep correction takes a full course.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALT BEAUTY -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">DR. PALLAVI RECOMMENDS</div>
+      <div class="alt-card">
+        <div class="alt-card-header">
+          <div class="label">Alt Beauty · Smart Formulations for Indian Skin</div>
+          <h3>Sunscreen is Non-Negotiable After a Peel</h3>
+        </div>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/products/smart-sunscreen" target="_blank">
+          <div class="alt-emoji">☀️</div>
+          <div class="alt-info">
+            <h4>Alt Beauty Smart Sunscreen</h4>
+            <p>Lightweight, non-comedogenic broad-spectrum — essential post-peel protection for Indian skin.</p>
+            <span class="link">Shop at thealtbeauty.com →</span>
+          </div>
+        </a>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/" target="_blank">
+          <div class="alt-emoji">🌿</div>
+          <div class="alt-info">
+            <h4>Explore Alt Beauty Range</h4>
+            <p>Clean, effective formulations for every skin type and concern.</p>
+            <span class="link">Visit thealtbeauty.com →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD AVOID -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">WHO SHOULD AVOID CHEMICAL PEELS</div>
+      <div class="avoid-list">
+        <div class="avoid-item"><span class="ax">·</span><span>Pregnant or breastfeeding women (some acids are off-limits — always consult your doctor)</span></div>
+        <div class="avoid-item"><span class="ax">·</span><span>People with active skin infections, cold sores, or open wounds on the treatment area</span></div>
+        <div class="avoid-item"><span class="ax">·</span><span>Those on certain oral acne medications (Isotretinoin) in the last 6 months</span></div>
+        <div class="avoid-item"><span class="ax">·</span><span>Skin that is actively sunburned or inflamed on the day of the procedure</span></div>
+      </div>
+      <div class="card card-warn" style="margin-top:14px;">
+        <p style="font-size:13px;"><strong>Important:</strong> Always get a chemical peel done by a qualified dermatologist. "At-home" high-strength peels are risky and can lead to chemical burns or worsened pigmentation — especially on Indian skin tones which are prone to post-inflammatory scarring.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">QUICK CHECKLIST 🌟</div>
+      <div class="checklist-grid">
+        <div class="cl-col">
+          <div class="cl-head do-head">✔ Do</div>
+          <div class="cl-item"><span class="cl-chk">✔</span><span>Broad-spectrum SPF daily, even indoors</span></div>
+          <div class="cl-item"><span class="cl-chk">✔</span><span>Soap-free, gentle cleanser only</span></div>
+          <div class="cl-item"><span class="cl-chk">✔</span><span>Drink plenty of water for healing</span></div>
+          <div class="cl-item"><span class="cl-chk">✔</span><span>Tell your doctor all medications</span></div>
+          <div class="cl-item"><span class="cl-chk">✔</span><span>Follow all post-care instructions fully</span></div>
+        </div>
+        <div class="cl-col">
+          <div class="cl-head dont-head">✕ Don't</div>
+          <div class="cl-item"><span class="cl-x">✕</span><span>Pick, scrub, or exfoliate for a week</span></div>
+          <div class="cl-item"><span class="cl-x">✕</span><span>Apply makeup for 24–48 hours after</span></div>
+          <div class="cl-item"><span class="cl-x">✕</span><span>Swim or do heavy workouts for 48h (sweat irritates)</span></div>
+          <div class="cl-item"><span class="cl-x">✕</span><span>Expose face to direct sunlight or steam</span></div>
+          <div class="cl-item"><span class="cl-x">✕</span><span>Do peel at home with high-strength acids</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <div class="wrapper">
+      <div class="philosophy-card">
+        <div class="small-label">THE PHILOSOPHY BEHIND THIS GUIDE</div>
+        <h2>Inner &amp; Outer Beauty.</h2>
+        <p>Wholesome beauty means trusting science when it is on your side — and chemical peels, when chosen correctly and administered by a qualified professional, are firmly on your side. Fear of a well-understood treatment should never stand between you and healthy skin.</p>
+        <em>Because real glow starts from within.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR NOTE -->
+  <section>
+    <div class="wrapper">
+      <div class="card card-amber">
+        <p style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;">A NOTE FROM DR. PALLAVI</p>
+        <p>I have patients who spent years applying creams for acne marks that simply don't respond to topical treatment alone. A well-chosen peel series can accomplish in 3 months what creams might not achieve in years — because we're working at a different layer of the skin entirely.</p>
+        <p>If you've been considering this and have questions, I encourage you to book a consultation. I'll assess your skin, choose the right peel depth and acid, and tell you exactly what to expect — session by session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">BOOK A CONSULTATION</div>
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Dr. Pallavi Ahire-Shelke</h2>
+          <p class="creds">MBBS, MD, DNB, DDV · Gold Medalist Dermatologist</p>
+          <p class="tagline">Personalised peel consultation — Skin Ethics Clinic, Pune</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cell"><div class="cc-icon">📍</div><div class="cc-label">Clinic</div><div class="cc-detail">Skin Ethics Clinic, Baner, Pune</div></div>
+          <a class="contact-cell" href="tel:+919028291234"><div class="cc-icon">📞</div><div class="cc-label">Phone</div><div class="cc-detail">+91 90282 91234</div><div class="cc-action">Book a consultation</div></a>
+          <a class="contact-cell" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank"><div class="cc-icon">📸</div><div class="cc-label">Instagram</div><div class="cc-detail">@drpallaviahireshelke</div><div class="cc-action">Daily skin education</div></a>
+          <a class="contact-cell" href="https://wa.me/919028291234" target="_blank"><div class="cc-icon">💬</div><div class="cc-label">WhatsApp</div><div class="cc-detail">Quick queries welcome</div><div class="cc-action">Message us</div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    This guide is for educational purposes only and does not constitute medical advice. Chemical peel procedures must only be performed by a qualified dermatologist. Individual results vary based on skin type, condition, and treatment protocol. Please consult Dr. Pallavi before beginning any procedure.
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Contact</h4><p>Skin Ethics Clinic<br>Baner, Pune<br>+91 90282 91234</p></div>
+      <div class="footer-col"><h4>Follow Us</h4><p>@drpallaviahireshelke<br>Instagram<br><em>Wholesome Beauty · Inner &amp; Outer</em></p></div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV</span>
+      <span>Skin Ethics Clinic, Baner, Pune</span>
+    </div>
+  </footer>
+
+</body>
+</html>

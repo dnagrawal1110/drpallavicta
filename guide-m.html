@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oily Skin Guide · Dr. Pallavi Ahire-Shelke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:     #2C1A1A;
+      --bg:       #FAF6F1;
+      --white:    #FFFFFF;
+      --pink:     #D4879C;
+      --blush:    #F2C4CF;
+      --sage-bg:  #FDF0F3;
+      --warn-bg:  #FDF6F0;
+      --border:   #EDD9CE;
+      --muted:    #A07880;
+      --highlight:#FBE8ED;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ── BACK NAV ───────────────────────────── */
+    .back-nav {
+      background: var(--bg);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-style: italic;
+    }
+    .back-nav a:hover { color: var(--pink); }
+
+    /* ── HEADER ─────────────────────────────── */
+    .site-header {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(212,135,156,0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(250,246,241,0.12) 0%, transparent 55%);
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      border: 1.5px solid var(--pink);
+      background: var(--white);
+      color: var(--pink);
+      font-family: 'Lora', serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .site-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 7vw, 36px);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .site-header h1 em { font-style: italic; color: var(--pink); }
+    .site-header .subline { color: var(--blush); font-size: 13px; max-width: 320px; margin: 0 auto 16px; }
+    .site-header .byline { color: var(--muted); font-size: 11px; margin-bottom: 8px; }
+    .site-header .philosophy { font-style: italic; color: var(--muted); font-size: 11px; }
+    .dots { margin: 16px 0 0; color: var(--pink); letter-spacing: 8px; font-size: 10px; }
+
+    /* ── LAYOUT ──────────────────────────────── */
+    .wrapper { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 28px 0; }
+
+    /* ── SECTION LABEL ───────────────────────── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Lora', serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 18px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── CARDS ───────────────────────────────── */
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--pink); }
+    .card-pink { border-left: 4px solid var(--pink); }
+    .card-warn { background: var(--warn-bg); border-left: 4px solid var(--dark); }
+    .card-sage { background: var(--sage-bg); border-left: 4px solid var(--pink); }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .card p { margin-bottom: 12px; font-size: 14px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ── QUOTE BANNER ────────────────────────── */
+    .quote-banner {
+      background: var(--sage-bg);
+      border-left: 4px solid var(--pink);
+      border-radius: 12px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .quote-banner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .quote-banner cite { font-size: 12px; color: var(--muted); }
+
+    /* ── DARK BANNER ─────────────────────────── */
+    .dark-banner {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 10%, rgba(212,135,156,0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(250,246,241,0.08) 0%, transparent 55%);
+      border-radius: 18px;
+      padding: 28px 22px;
+      margin-bottom: 16px;
+    }
+    .dark-banner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .dark-banner p { font-size: 13px; color: var(--blush); }
+
+    /* ── STAT CARDS ──────────────────────────── */
+    .stat-grid { display: flex; flex-direction: column; gap: 14px; }
+    .stat-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-num {
+      position: absolute;
+      top: 8px;
+      right: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      color: var(--border);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .stat-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .stat-card p { font-size: 13px; color: var(--muted); }
+
+    /* ── TWO COL GRID ────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+
+    .check-card {
+      background: var(--sage-bg);
+      border-left: 4px solid var(--pink);
+      border-radius: 12px;
+      padding: 14px 14px;
+    }
+    .check-card .check-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      color: var(--dark);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .check-card .check-title .chk { color: var(--pink); font-weight: 700; }
+    .check-card p { font-size: 12px; color: var(--muted); margin: 0; }
+
+    .avoid-card {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--dark);
+      border-radius: 12px;
+      padding: 14px 14px;
+    }
+    .avoid-card .check-title { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 4px; display: flex; gap: 6px; }
+    .avoid-card .check-title .x { color: var(--dark); font-weight: 700; }
+    .avoid-card p { font-size: 12px; color: var(--muted); margin: 0; }
+
+    .col-header {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── STEPS ───────────────────────────────── */
+    .step-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-body { flex: 1; }
+    .step-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .step-body p { font-size: 13px; color: var(--muted); margin: 0; }
+    .step-badge {
+      display: inline-block;
+      background: var(--white);
+      border: 1.5px solid var(--pink);
+      color: var(--pink);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-top: 10px;
+    }
+
+    /* ── MYTH CARDS ──────────────────────────── */
+    .myth-card {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--dark);
+      border-radius: 12px;
+      padding: 18px 18px;
+      margin-bottom: 14px;
+    }
+    .myth-card .myth-line {
+      font-size: 13px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .myth-card .myth-line .x { color: var(--dark); font-weight: 700; }
+    .myth-card .myth-line .chk { color: var(--pink); font-weight: 700; }
+    .myth-card .myth-line span { flex: 1; }
+
+    /* ── INGREDIENT GRID ─────────────────────── */
+    .ingredient-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 400px) { .ingredient-grid { grid-template-columns: 1fr; } }
+
+    .ing-card {
+      background: var(--white);
+      border-top: 3px solid var(--pink);
+      border-radius: 12px;
+      padding: 16px 14px 14px;
+    }
+    .ing-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .ing-card p { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+    .ing-badge {
+      display: inline-block;
+      background: var(--highlight);
+      color: var(--pink);
+      font-size: 10px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--blush);
+    }
+
+    /* ── PHILOSOPHY CARD ─────────────────────── */
+    .philosophy-card {
+      background: var(--sage-bg);
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .philosophy-card .small-label {
+      font-family: 'Lora', serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 12px;
+    }
+    .philosophy-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+    .philosophy-card p { font-size: 14px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card em { font-style: italic; color: var(--pink); }
+
+    /* ── CONTACT CARD ────────────────────────── */
+    .contact-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .contact-header {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 15%, rgba(212,135,156,0.4) 0%, transparent 55%);
+      padding: 22px 20px;
+      text-align: center;
+    }
+    .contact-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .contact-header .creds { font-size: 11px; color: var(--blush); margin-bottom: 6px; }
+    .contact-header .tagline { font-size: 12px; color: var(--muted); font-style: italic; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 400px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-cell {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+    .contact-cell:nth-child(even) { border-right: none; }
+    .contact-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .contact-cell:hover { background: var(--highlight); }
+    .cc-icon { font-size: 18px; margin-bottom: 4px; }
+    .cc-label { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--dark); }
+    .cc-detail { font-size: 11px; color: var(--muted); }
+    .cc-action { font-size: 11px; color: var(--pink); font-style: italic; margin-top: 2px; }
+
+    /* ── ALT BEAUTY ──────────────────────────── */
+    .alt-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .alt-card-header {
+      background: var(--highlight);
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .alt-card-header .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); margin-bottom: 2px; }
+    .alt-card-header h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--dark); }
+    .alt-product-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+    .alt-product-row:hover { background: var(--highlight); }
+    .alt-emoji { font-size: 26px; width: 42px; height: 42px; background: var(--highlight); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .alt-info h4 { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 2px; }
+    .alt-info p { font-size: 12px; color: var(--muted); }
+    .alt-info .link { font-size: 11px; color: var(--pink); font-style: italic; }
+
+    /* ── DISCLAIMER ──────────────────────────── */
+    .disclaimer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+      padding: 20px 16px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(212,135,156,0.3) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(250,246,241,0.08) 0%, transparent 55%);
+      padding: 28px 20px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 400px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); margin-bottom: 8px; }
+    .footer-col p { font-size: 12px; color: var(--blush); line-height: 1.6; }
+    .footer-col p em { font-style: italic; color: var(--muted); }
+    .footer-divider { max-width: 480px; margin: 0 auto; border: none; border-top: 1px solid rgba(212,135,156,0.3); }
+    .footer-bottom {
+      max-width: 480px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      padding: 12px 0 16px;
+      flex-wrap: wrap; gap: 4px;
+    }
+    .footer-bottom span { font-size: 10px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <!-- BACK NAV -->
+  <nav class="back-nav">
+    <a href="index.html">
+      ← All Guides
+    </a>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="pill">YOUR OILY SKIN GUIDE</div>
+    <h1>Your Skin Is Oily.<br>It Is Also <em>Thirsty.</em></h1>
+    <p class="subline">Skipping moisturiser on oily skin is one of the most common — and most damaging — mistakes I see in my clinic.</p>
+    <p class="byline">Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV · Gold Medalist Dermatologist · Skin Ethics Clinic, Baner, Pune</p>
+    <p class="philosophy">Inner &amp; Outer Beauty · Wholesome Beauty</p>
+    <div class="dots">· · ·</div>
+  </header>
+
+  <!-- WELCOME CARD -->
+  <section>
+    <div class="wrapper">
+      <div class="card card-pink">
+        <h2>Let me tell you what oily skin actually means 🔬</h2>
+        <p>Oily skin means your sebaceous glands are overactive — they produce more sebum than your skin needs. But sebum is not the same as hydration. Sebum is an oil. Water is water. Your skin can be simultaneously oily on the surface and severely dehydrated at a cellular level — and this combination is far more common than most people realise.</p>
+        <p>When you strip your skin of moisture — through skipping moisturiser, over-cleansing, or using harsh actives without support — your skin's response is to produce even more oil to compensate. The very thing you were trying to reduce, you are making worse.</p>
+      </div>
+
+      <!-- Expert Quote -->
+      <div class="quote-banner">
+        <blockquote>"In over a decade of practice, I have yet to meet an oily skin patient who needed less hydration. They all needed better hydration."</blockquote>
+        <cite>— Dr. Pallavi Ahire-Shelke</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">THE SCIENCE BEHIND IT</div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-num">01</span>
+          <h3>🧫 Sebum ≠ Hydration</h3>
+          <p>Sebum is a lipid secretion. It protects the skin surface. It does not hydrate skin cells. These are two entirely different biological functions happening in different layers of the skin.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">02</span>
+          <h3>💧 Dehydrated Oily Skin Is Real</h3>
+          <p>Oily skin that is also dehydrated is extremely common in India — triggered by hard water, humidity, air conditioning, and harsh cleansing habits.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">03</span>
+          <h3>🔄 The Compensation Cycle</h3>
+          <p>When skin loses water, sebaceous glands produce more oil to protect the barrier. More oil means clogged pores. More clogged pores mean breakouts. Moisturiser breaks this cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUTH BANNER -->
+  <section>
+    <div class="wrapper">
+      <div class="dark-banner">
+        <blockquote>"Moisturiser does not cause acne. The wrong moisturiser might."</blockquote>
+        <p>This is not a nuance — it is a clinical fact. The formulation is everything. Oily skin needs moisture delivered in the right vehicle: lightweight, water-based, and non-comedogenic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO LOOK FOR -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">HOW WE CHOOSE A MOISTURISER FOR OILY SKIN</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">When a patient with oily or acne-prone skin comes to me, here is exactly what I look for on the label — and what I tell them to avoid.</p>
+
+      <div class="two-col">
+        <div>
+          <div class="col-header">✔ Look For</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="check-card">
+              <div class="check-title"><span class="chk">✔</span> Gel or gel-cream texture</div>
+              <p>Delivers hydration without heaviness. Absorbs quickly, leaves no greasy residue.</p>
+            </div>
+            <div class="check-card">
+              <div class="check-title"><span class="chk">✔</span> Non-comedogenic label</div>
+              <p>Tested to not block pores. The single most important label claim for oily skin.</p>
+            </div>
+            <div class="check-card">
+              <div class="check-title"><span class="chk">✔</span> Hyaluronic Acid</div>
+              <p>Draws water into skin cells. Lightweight, oil-free, highly effective.</p>
+            </div>
+            <div class="check-card">
+              <div class="check-title"><span class="chk">✔</span> Niacinamide</div>
+              <p>Regulates sebum production while strengthening the barrier.</p>
+            </div>
+            <div class="check-card">
+              <div class="check-title"><span class="chk">✔</span> Centella Asiatica</div>
+              <p>Calms inflammation, supports barrier repair without heaviness.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-header">✕ Avoid</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="avoid-card">
+              <div class="check-title"><span class="x">✕</span> Heavy creams &amp; butters</div>
+              <p>Shea, cocoa butter sit on oily skin and block pores. Formulated for dry skin.</p>
+            </div>
+            <div class="avoid-card">
+              <div class="check-title"><span class="x">✕</span> Fragrance &amp; essential oils</div>
+              <p>Frequently comedogenic and inflammatory. Often hidden as "parfum".</p>
+            </div>
+            <div class="avoid-card">
+              <div class="check-title"><span class="x">✕</span> Alcohol-heavy formulas</div>
+              <p>Dries the surface while leaving deeper layers dehydrated.</p>
+            </div>
+            <div class="avoid-card">
+              <div class="check-title"><span class="x">✕</span> Petroleum-based occlusives</div>
+              <p>Vaseline and mineral oil are excellent for dry skin. For oily skin, they suffocate pores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO APPLY -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">THE RIGHT WAY TO APPLY</div>
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>🧴 Cleanse first — gently</h3>
+          <p>Use a gentle, pH-balanced gel cleanser. Avoid antibacterial soaps or cleansers that leave skin feeling "squeaky clean" — that feeling means your barrier is stripped.</p>
+          <div class="step-badge">pH-balanced cleanse</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>💧 Apply on damp skin</h3>
+          <p>Apply your moisturiser within 60 seconds of washing your face, while skin is still slightly damp. This locks in water rather than just sitting on top of a dry surface.</p>
+          <div class="step-badge">Damp skin application</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>✌️ Use a pea-sized amount</h3>
+          <p>Oily skin needs a thin, even layer — not a thick application. A pea-sized amount spread across the entire face is sufficient. More product does not mean more hydration.</p>
+          <div class="step-badge">Less is more</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>☀️ Always follow with SPF in the morning</h3>
+          <p>SPF is not optional for oily skin — UV exposure worsens sebum production and post-acne pigmentation. Choose a lightweight, non-comedogenic SPF 30 or higher.</p>
+          <div class="step-badge">SPF is step two</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALT BEAUTY SUNSCREEN -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">DR. PALLAVI RECOMMENDS</div>
+      <div class="alt-card">
+        <div class="alt-card-header">
+          <div class="label">Alt Beauty · Smart Formulations for Indian Skin</div>
+          <h3>The Sunscreen We Recommend for Oily Skin</h3>
+        </div>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/products/smart-sunscreen" target="_blank">
+          <div class="alt-emoji">☀️</div>
+          <div class="alt-info">
+            <h4>Alt Beauty Smart Sunscreen</h4>
+            <p>Lightweight, non-comedogenic, broad-spectrum — built for oily and Indian skin.</p>
+            <span class="link">Shop at thealtbeauty.com →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYTHS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">MYTHS I HEAR EVERY DAY IN CLINIC</div>
+
+      <div class="myth-card">
+        <div class="myth-line"><span class="x">✕</span><span><strong>"Moisturiser will make my skin more oily"</strong></span></div>
+        <div class="myth-line"><span class="chk">✔</span><span>The opposite is true. When skin is properly hydrated, sebaceous glands receive the signal to slow down oil production. Consistent moisturisation reduces oiliness over time — within weeks.</span></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-line"><span class="x">✕</span><span><strong>"I have oily skin so my skin doesn't need extra hydration"</strong></span></div>
+        <div class="myth-line"><span class="chk">✔</span><span>Oiliness is a surface phenomenon. Hydration happens at a cellular level. You can have an oily surface and dehydrated cells simultaneously — and most untreated oily skin patients in my clinic do.</span></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-line"><span class="x">✕</span><span><strong>"If I break out after a moisturiser, moisturisers cause my acne"</strong></span></div>
+        <div class="myth-line"><span class="chk">✔</span><span>A breakout after a specific moisturiser means that moisturiser was not formulated correctly for oily skin. The answer is to change the formulation, not abandon moisturisation entirely.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENT SPOTLIGHT -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">INGREDIENTS THAT WORK FOR OILY SKIN</div>
+      <div class="ingredient-grid">
+        <div class="ing-card">
+          <h3>Hyaluronic Acid</h3>
+          <p>Pulls water from the environment into skin cells. Completely oil-free. The gold standard hydrator for oily skin.</p>
+          <span class="ing-badge">Humectant</span>
+        </div>
+        <div class="ing-card">
+          <h3>Niacinamide</h3>
+          <p>Regulates excess sebum, minimises pore appearance, and reduces post-acne marks. Highly evidence-backed.</p>
+          <span class="ing-badge">Sebum regulation</span>
+        </div>
+        <div class="ing-card">
+          <h3>Centella Asiatica</h3>
+          <p>Calms inflamed, reactive skin and accelerates barrier repair without comedogenic risk.</p>
+          <span class="ing-badge">Anti-inflammatory</span>
+        </div>
+        <div class="ing-card">
+          <h3>Panthenol (B5)</h3>
+          <p>A lightweight humectant that hydrates deeply without any greasiness. Non-comedogenic, supports wound healing.</p>
+          <span class="ing-badge">Barrier support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <div class="wrapper">
+      <div class="philosophy-card">
+        <div class="small-label">THE PHILOSOPHY BEHIND THIS GUIDE</div>
+        <h2>Inner &amp; Outer Beauty.</h2>
+        <p>Wholesome beauty means working with your skin — not against it. Oily skin is not a problem to be punished with harsh products and stripped routines. It is a skin type that, when understood and treated correctly, can be remarkably resilient.</p>
+        <em>Because real glow starts from within.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR'S NOTE -->
+  <section>
+    <div class="wrapper">
+      <div class="card card-pink">
+        <p style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pink);margin-bottom:10px;">A NOTE FROM DR. PALLAVI</p>
+        <p>I have seen patients who stopped moisturising for years because someone told them their oily skin didn't need it. By the time they came to my clinic, their barrier was severely compromised — they were breaking out constantly and their skin was reactive to almost everything. It took months to repair.</p>
+        <p>Please do not make this mistake. The right moisturiser, used consistently, is one of the most important things you can do for oily skin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">BOOK A CONSULTATION</div>
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Dr. Pallavi Ahire-Shelke</h2>
+          <p class="creds">MBBS, MD, DNB, DDV · Gold Medalist Dermatologist</p>
+          <p class="tagline">Book a consultation or follow for daily tips</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cell">
+            <div class="cc-icon">📍</div>
+            <div class="cc-label">Clinic</div>
+            <div class="cc-detail">Skin Ethics Clinic, Baner, Pune</div>
+          </div>
+          <a class="contact-cell" href="tel:+919028291234">
+            <div class="cc-icon">📞</div>
+            <div class="cc-label">Phone</div>
+            <div class="cc-detail">+91 90282 91234</div>
+            <div class="cc-action">Book a consultation</div>
+          </a>
+          <a class="contact-cell" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank">
+            <div class="cc-icon">📸</div>
+            <div class="cc-label">Instagram</div>
+            <div class="cc-detail">@drpallaviahireshelke</div>
+            <div class="cc-action">Daily skin &amp; hair education</div>
+          </a>
+          <a class="contact-cell" href="https://wa.me/919028291234" target="_blank">
+            <div class="cc-icon">💬</div>
+            <div class="cc-label">WhatsApp</div>
+            <div class="cc-detail">Quick queries welcome</div>
+            <div class="cc-action">Message us</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    This guide is for educational purposes only and does not constitute medical advice. Skincare recommendations are general in nature. Please consult a qualified dermatologist before changing your skincare routine, especially if you have active acne or a diagnosed skin condition.
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Skin Ethics Clinic<br>Baner, Pune<br>+91 90282 91234</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>@drpallaviahireshelke<br>Instagram<br><em>Wholesome Beauty · Inner &amp; Outer</em></p>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV</span>
+      <span>Skin Ethics Clinic, Baner, Pune</span>
+    </div>
+  </footer>
+
+</body>
+</html>

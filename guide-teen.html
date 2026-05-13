@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teen Skincare Starter Kit · Dr. Pallavi Ahire-Shelke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #1A2E1A;
+      --bg:      #F5F9F5;
+      --white:   #FFFFFF;
+      --green:   #4A8C5C;
+      --mint:    #8ECFA0;
+      --sage-bg: #EBF4ED;
+      --peach:   #E87D5C;
+      --peach-bg:#FDF1ED;
+      --lavender:#8B7CC8;
+      --lav-bg:  #F0EEF9;
+      --border:  #CFDECF;
+      --muted:   #6B8A72;
+      --budget:  #D4A843;
+      --budget-bg:#FBF5E4;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .back-nav {
+      background: var(--bg);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-style: italic;
+    }
+    .back-nav a:hover { color: var(--green); }
+
+    /* HEADER */
+    .site-header {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(74,140,92,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(142,207,160,0.2) 0%, transparent 55%);
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      border: 1.5px solid var(--mint);
+      background: var(--white);
+      color: var(--green);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .site-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 6.5vw, 34px);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .site-header h1 em { font-style: italic; color: var(--mint); }
+    .site-header .subline { color: var(--mint); font-size: 13px; max-width: 320px; margin: 0 auto 16px; opacity: 0.85; }
+    .site-header .byline { color: var(--muted); font-size: 11px; margin-bottom: 8px; }
+    .site-header .philosophy { font-style: italic; color: var(--muted); font-size: 11px; }
+    .dots { margin: 16px 0 0; color: var(--mint); letter-spacing: 8px; font-size: 10px; }
+
+    .wrapper { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 28px 0; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* WELCOME */
+    .welcome-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+    .welcome-card h2 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--dark); margin-bottom: 10px; }
+    .welcome-card p { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .welcome-card p:last-child { margin-bottom: 0; }
+
+    .budget-banner {
+      background: var(--budget-bg);
+      border: 1.5px solid var(--budget);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .budget-banner p {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--dark);
+    }
+    .budget-banner span { color: var(--budget); font-style: italic; }
+
+    /* INGREDIENT CARDS */
+    .ing-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .ing-card:hover { border-color: var(--green); }
+
+    .ing-header {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ing-icon {
+      font-size: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-green { background: var(--sage-bg); }
+    .icon-peach { background: var(--peach-bg); }
+    .icon-lav   { background: var(--lav-bg); }
+    .icon-sun   { background: var(--budget-bg); }
+
+    .ing-num {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .ing-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    .ing-body { padding: 16px 20px; }
+
+    .ing-what {
+      background: var(--sage-bg);
+      border-left: 3px solid var(--green);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .ing-what .what-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .ing-what .benefit-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .benefit-chip {
+      background: var(--white);
+      border: 1px solid var(--mint);
+      color: var(--green);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .ing-what p { font-size: 13px; color: var(--dark); margin: 0; }
+
+    .ing-how {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .ing-how .how-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .how-step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .how-step:last-child { margin-bottom: 0; }
+    .how-dot {
+      width: 20px;
+      height: 20px;
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-family: 'Playfair Display', serif;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pro-tip {
+      background: var(--lav-bg);
+      border-left: 3px solid var(--lavender);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--lavender);
+    }
+    .pro-tip .tip-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    /* SUNSCREEN SPECIAL */
+    .spf-banner {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 10%, rgba(74,140,92,0.5) 0%, transparent 55%);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .spf-banner p {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--white);
+    }
+    .spf-banner p em { color: var(--mint); font-style: italic; }
+
+    /* PRODUCT RECOMMENDATIONS */
+    .product-section { margin-bottom: 20px; }
+    .product-category-header {
+      background: var(--sage-bg);
+      border-radius: 10px 10px 0 0;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-bottom: none;
+    }
+    .product-category-header .cat-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 2px;
+    }
+    .product-category-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--dark);
+    }
+    .product-list {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+    }
+    .product-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .product-item:last-child { border-bottom: none; }
+    .product-num {
+      width: 24px;
+      height: 24px;
+      background: var(--sage-bg);
+      color: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-family: 'Playfair Display', serif;
+      flex-shrink: 0;
+    }
+    .product-name { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 2px; }
+    .product-price {
+      display: inline-block;
+      background: var(--budget-bg);
+      border: 1px solid var(--budget);
+      color: var(--budget);
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    /* ALT BEAUTY featured */
+    .alt-featured {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 15%, rgba(74,140,92,0.4) 0%, transparent 55%);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .alt-featured .af-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mint);
+      margin-bottom: 6px;
+    }
+    .alt-featured h4 { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--white); margin-bottom: 4px; }
+    .alt-featured p { font-size: 12px; color: var(--mint); opacity: 0.85; margin-bottom: 10px; }
+    .alt-featured a {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Lora', serif;
+      font-size: 12px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    /* AM PM ROUTINE */
+    .routine-container { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 500px) { .routine-container { grid-template-columns: 1fr; } }
+
+    .routine-col { border-radius: 14px; overflow: hidden; }
+    .routine-header {
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .am-header { background: var(--budget-bg); border-bottom: 2px solid var(--budget); }
+    .pm-header { background: var(--lav-bg); border-bottom: 2px solid var(--lavender); }
+    .routine-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+    }
+    .am-header h3 { color: var(--budget); }
+    .pm-header h3 { color: var(--lavender); }
+
+    .routine-step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: none;
+      padding: 12px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .routine-step:last-child { border-radius: 0 0 12px 12px; }
+    .r-num {
+      width: 22px;
+      height: 22px;
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-family: 'Playfair Display', serif;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .r-body .r-title { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); }
+    .r-body .r-note { font-size: 11px; color: var(--muted); }
+
+    .routine-callout {
+      background: var(--sage-bg);
+      border: 1.5px solid var(--green);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--dark);
+      text-align: center;
+    }
+    .routine-callout strong { color: var(--green); }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 18px;
+      padding-left: 20px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+    }
+    .timeline-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .timeline-item p { font-size: 13px; color: var(--muted); }
+
+    /* TIPS */
+    .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 400px) { .tips-grid { grid-template-columns: 1fr; } }
+    .tip-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-top: 3px solid var(--green);
+      border-radius: 12px;
+      padding: 14px 14px;
+    }
+    .tip-card h3 { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--dark); margin-bottom: 6px; }
+    .tip-card p { font-size: 12px; color: var(--muted); }
+
+    /* FAQ */
+    .faq-item {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .faq-item .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--dark);
+      margin-bottom: 6px;
+      display: flex;
+      gap: 8px;
+    }
+    .faq-item .faq-q .q-mark { color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .faq-item .faq-a { font-size: 13px; color: var(--muted); padding-left: 18px; }
+
+    /* PHILOSOPHY */
+    .philosophy-card {
+      background: var(--sage-bg);
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .philosophy-card .small-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .philosophy-card h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card p { font-size: 14px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card em { font-style: italic; color: var(--green); }
+
+    /* CONTACT */
+    .consult-banner {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 10%, rgba(74,140,92,0.5) 0%, transparent 55%);
+      border-radius: 18px;
+      padding: 26px 20px;
+      text-align: center;
+    }
+    .consult-banner .c-pill {
+      display: inline-block;
+      border: 1.5px solid var(--mint);
+      color: var(--mint);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .consult-banner h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 8px; }
+    .consult-banner h2 em { color: var(--mint); font-style: italic; }
+    .consult-banner p { font-size: 13px; color: var(--mint); opacity: 0.85; margin-bottom: 18px; }
+    .consult-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn-primary {
+      display: block;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Lora', serif;
+      font-size: 14px;
+      text-align: center;
+      padding: 13px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      display: block;
+      background: transparent;
+      color: var(--mint);
+      border: 1.5px solid rgba(142,207,160,0.4);
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      text-align: center;
+      padding: 11px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    .contact-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; margin-top: 16px; }
+    .contact-header {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 15%, rgba(74,140,92,0.5) 0%, transparent 55%);
+      padding: 20px 20px;
+      text-align: center;
+    }
+    .contact-header h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); margin-bottom: 4px; }
+    .contact-header .creds { font-size: 11px; color: var(--mint); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 400px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-cell {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+    .contact-cell:nth-child(even) { border-right: none; }
+    .contact-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .contact-cell:hover { background: var(--sage-bg); }
+    .cc-icon { font-size: 18px; margin-bottom: 4px; }
+    .cc-label { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--dark); }
+    .cc-detail { font-size: 11px; color: var(--muted); }
+    .cc-action { font-size: 11px; color: var(--green); font-style: italic; margin-top: 2px; }
+
+    .disclaimer { text-align: center; font-size: 11px; color: var(--muted); padding: 20px 16px; max-width: 440px; margin: 0 auto; }
+
+    footer {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(74,140,92,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(142,207,160,0.08) 0%, transparent 55%);
+      padding: 28px 20px 0;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 480px; margin: 0 auto; padding-bottom: 20px; }
+    @media (max-width: 400px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mint); margin-bottom: 8px; }
+    .footer-col p { font-size: 12px; color: var(--mint); line-height: 1.6; opacity: 0.8; }
+    .footer-col p em { font-style: italic; opacity: 0.7; }
+    .footer-divider { max-width: 480px; margin: 0 auto; border: none; border-top: 1px solid rgba(74,140,92,0.3); }
+    .footer-bottom { max-width: 480px; margin: 0 auto; display: flex; justify-content: space-between; padding: 12px 0 16px; flex-wrap: wrap; gap: 4px; }
+    .footer-bottom span { font-size: 10px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav class="back-nav">
+    <a href="index.html">← All Guides</a>
+  </nav>
+
+  <header class="site-header">
+    <div class="pill">TEEN SKINCARE STARTER KIT ✨</div>
+    <h1>Clear, Glowing, Healthy Skin —<br><em>The Science-Backed Way</em></h1>
+    <p class="subline">Dermatologist-approved. Budget-friendly. Built for teen skin.</p>
+    <p class="byline">Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV · Gold Medalist Dermatologist · Skin Ethics Clinic, Baner, Pune</p>
+    <p class="philosophy">Inner &amp; Outer Beauty · Wholesome Beauty</p>
+    <div class="dots">· · ·</div>
+  </header>
+
+  <!-- WELCOME -->
+  <section>
+    <div class="wrapper">
+      <div class="welcome-card">
+        <h2>Hey! Want clear, glowing, healthy skin? 🌱</h2>
+        <p>Teenage skin is changing — and the last thing it needs is a complicated 10-step routine loaded with harsh actives. What it does need is the right ingredients, used correctly, consistently.</p>
+        <p>This guide gives you exactly that: 4 science-backed ingredients, an AM/PM routine, and honest product recommendations — all under ₹500 each.</p>
+      </div>
+      <div class="budget-banner">
+        <p>All recommended products under <span>₹500 each</span> — science-backed, teen-friendly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 INGREDIENTS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">THE 4 ESSENTIAL INGREDIENTS 🧪</div>
+
+      <!-- Niacinamide -->
+      <div class="ing-card">
+        <div class="ing-header">
+          <div class="ing-icon icon-green">🌿</div>
+          <div>
+            <div class="ing-num">Ingredient 01</div>
+            <h2>Niacinamide (5%) Serum</h2>
+          </div>
+        </div>
+        <div class="ing-body">
+          <div class="ing-what">
+            <div class="what-label">What It Does</div>
+            <div class="benefit-chips">
+              <span class="benefit-chip">Controls oil</span>
+              <span class="benefit-chip">Fights breakouts</span>
+              <span class="benefit-chip">Brightens tone</span>
+              <span class="benefit-chip">Minimal irritation</span>
+            </div>
+            <p>The multitasking hero for teenage skin. Safe enough for daily use and effective enough to actually make a difference — niacinamide tackles breakouts, redness, and dullness all at once.</p>
+          </div>
+          <div class="ing-how">
+            <div class="how-label">How to Use It</div>
+            <div class="how-step"><span class="how-dot">1</span><span>Apply a few drops after washing your face</span></div>
+            <div class="how-step"><span class="how-dot">2</span><span>Lightly pat onto clean skin — do not rub</span></div>
+            <div class="how-step"><span class="how-dot">3</span><span>Use morning and night</span></div>
+            <div class="how-step"><span class="how-dot">4</span><span>Apply <em>before</em> moisturiser</span></div>
+            <div class="how-step"><span class="how-dot">5</span><span>Always finish with sunscreen during the day</span></div>
+          </div>
+          <div class="pro-tip">
+            <div class="tip-label">Pro Tip</div>
+            Start with a low concentration (2–5%). Patch test first. Slow and steady wins clear skin.
+          </div>
+        </div>
+      </div>
+
+      <!-- Hyaluronic Acid -->
+      <div class="ing-card">
+        <div class="ing-header">
+          <div class="ing-icon icon-peach">💧</div>
+          <div>
+            <div class="ing-num">Ingredient 02</div>
+            <h2>Hyaluronic Acid Serum</h2>
+          </div>
+        </div>
+        <div class="ing-body">
+          <div class="ing-what">
+            <div class="what-label">What It Does</div>
+            <div class="benefit-chips">
+              <span class="benefit-chip">Deep hydration</span>
+              <span class="benefit-chip">No oiliness</span>
+              <span class="benefit-chip">Softer texture</span>
+              <span class="benefit-chip">All skin types</span>
+            </div>
+            <p>Hydration without the grease. Hyaluronic acid keeps skin soft, plump, and balanced without triggering breakouts — perfect for all skin types including oily and acne-prone.</p>
+          </div>
+          <div class="ing-how">
+            <div class="how-label">How to Use It</div>
+            <div class="how-step"><span class="how-dot">1</span><span>Pat a few drops onto <strong>damp skin</strong> after washing</span></div>
+            <div class="how-step"><span class="how-dot">2</span><span>Use morning and night</span></div>
+            <div class="how-step"><span class="how-dot">3</span><span>Follow with a lightweight, oil-free moisturiser</span></div>
+            <div class="how-step"><span class="how-dot">4</span><span>Always finish with sunscreen during the day</span></div>
+          </div>
+          <div class="pro-tip">
+            <div class="tip-label">Pro Tip</div>
+            Always apply on damp skin — it pulls water into the skin cells. On dry skin, the effect is much weaker.
+          </div>
+        </div>
+      </div>
+
+      <!-- Gel Moisturiser -->
+      <div class="ing-card">
+        <div class="ing-header">
+          <div class="ing-icon icon-lav">🫧</div>
+          <div>
+            <div class="ing-num">Ingredient 03</div>
+            <h2>Gel-Based Moisturiser</h2>
+          </div>
+        </div>
+        <div class="ing-body">
+          <div class="ing-what">
+            <div class="what-label">Why It Works for Teen Skin</div>
+            <div class="benefit-chips">
+              <span class="benefit-chip">Oily skin</span>
+              <span class="benefit-chip">Acne-prone</span>
+              <span class="benefit-chip">Combination skin</span>
+              <span class="benefit-chip">Non-greasy</span>
+            </div>
+            <p>Light, oil-free, and quick-absorbing — gel moisturisers keep skin soft and shine-free without clogging pores. Even oily skin needs hydration to stay balanced and healthy.</p>
+          </div>
+          <div class="ing-how">
+            <div class="how-label">How to Use It</div>
+            <div class="how-step"><span class="how-dot">1</span><span>Apply a thin layer after cleansing and serum</span></div>
+            <div class="how-step"><span class="how-dot">2</span><span>Use twice daily — morning and night</span></div>
+            <div class="how-step"><span class="how-dot">3</span><span>Focus on T-zone, cheeks, and forehead</span></div>
+            <div class="how-step"><span class="how-dot">4</span><span>Suitable under sunscreen and makeup</span></div>
+          </div>
+          <div class="pro-tip">
+            <div class="tip-label">Pro Tip</div>
+            Even oily skin needs moisturiser. Skipping it causes your skin to produce more oil to compensate.
+          </div>
+        </div>
+      </div>
+
+      <!-- Sunscreen -->
+      <div class="ing-card">
+        <div class="ing-header">
+          <div class="ing-icon icon-sun">☀️</div>
+          <div>
+            <div class="ing-num">Ingredient 04 · Most Important</div>
+            <h2>Sunscreen SPF 50+</h2>
+          </div>
+        </div>
+        <div class="ing-body">
+          <div class="ing-what">
+            <div class="what-label">Why It's Non-Negotiable</div>
+            <div class="benefit-chips">
+              <span class="benefit-chip">Prevents sunburn</span>
+              <span class="benefit-chip">Stops pigmentation</span>
+              <span class="benefit-chip">Anti-ageing</span>
+              <span class="benefit-chip">Daily must-have</span>
+            </div>
+            <p>Sunscreen is the single most important skincare step at any age. It protects your skin from UV damage, prevents dark spots, and keeps your skin youthful for the long run. No excuses.</p>
+          </div>
+          <div class="ing-how">
+            <div class="how-label">How to Use It</div>
+            <div class="how-step"><span class="how-dot">1</span><span>Apply 1 finger-tip unit on face</span></div>
+            <div class="how-step"><span class="how-dot">2</span><span>Apply at least 15 minutes before sun exposure</span></div>
+            <div class="how-step"><span class="how-dot">3</span><span>Reapply every 4 hours when outdoors</span></div>
+            <div class="how-step"><span class="how-dot">4</span><span>Reapply immediately after swimming or sweating</span></div>
+            <div class="how-step"><span class="how-dot">5</span><span>Last step of your morning routine</span></div>
+          </div>
+          <div class="spf-banner">
+            <p><em>USE SUNSCREEN DAILY — Your future skin will thank you.</em></p>
+          </div>
+
+          <!-- Alt Beauty featured -->
+          <div class="alt-featured" style="margin-top:14px;">
+            <div class="af-label">Dr. Pallavi Recommends · Alt Beauty</div>
+            <h4>Smart Sunscreen</h4>
+            <p>Lightweight, broad-spectrum, non-comedogenic — designed for Indian skin including oily and acne-prone types.</p>
+            <a href="https://www.thealtbeauty.com/products/smart-sunscreen" target="_blank">Shop at thealtbeauty.com →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCT RECOMMENDATIONS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">BUDGET-FRIENDLY PICKS 💰</div>
+
+      <div class="product-section">
+        <div class="product-category-header">
+          <div class="cat-label">Ingredient 01</div>
+          <h3>🌿 Niacinamide (5%) Serum</h3>
+        </div>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="product-num">1</div>
+            <div>
+              <div class="product-name">RE'EQUIL Pore Refining 5% Niacinamide Serum</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">2</div>
+            <div>
+              <div class="product-name">Hyphen Brightening 5% Niacinamide Serum</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">3</div>
+            <div>
+              <div class="product-name">The Body Temple TBT 5% Niacinamide Face Serum</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-section">
+        <div class="product-category-header">
+          <div class="cat-label">Ingredient 02</div>
+          <h3>💧 Hyaluronic Acid Serum</h3>
+        </div>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="product-num">1</div>
+            <div>
+              <div class="product-name">Foxtale Hyaluronic Acid Serum</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">2</div>
+            <div>
+              <div class="product-name">Streax Hydrate &amp; Shine Face Serum</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">3</div>
+            <div>
+              <div class="product-name">RE'EQUIL Ceramide &amp; Hyaluronic Acid Moisturizer</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-section">
+        <div class="product-category-header">
+          <div class="cat-label">Ingredient 03</div>
+          <h3>🫧 Gel-Based Moisturiser</h3>
+        </div>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="product-num">1</div>
+            <div>
+              <div class="product-name">Alt Beauty Aqualite Pro Moisturizer</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">2</div>
+            <div>
+              <div class="product-name">Zitmoist Gel Moisturizer</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">3</div>
+            <div>
+              <div class="product-name">Acnemoist Moisturiser</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-section">
+        <div class="product-category-header">
+          <div class="cat-label">Ingredient 04 · Most Important</div>
+          <h3>☀️ Sunscreen SPF 50+</h3>
+        </div>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="product-num">★</div>
+            <div>
+              <div class="product-name">Alt Beauty Smart Sunscreen</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">2</div>
+            <div>
+              <div class="product-name">UVdoux Sunscreen Gel SPF 50 PA+++</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">3</div>
+            <div>
+              <div class="product-name">La Shield Pollution Protect SPF 50 Mineral Sunscreen Gel</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-num">4</div>
+            <div>
+              <div class="product-name">Re'equil Ultra Matte Dry Touch Sunscreen Gel</div>
+              <span class="product-price">Under ₹500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AM PM ROUTINE -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">YOUR AM/PM ROUTINE 🌅🌙</div>
+      <div class="routine-container">
+        <div class="routine-col">
+          <div class="routine-header am-header">
+            <h3>☀️ Morning</h3>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">1</span>
+            <div class="r-body">
+              <div class="r-title">Gentle Cleanser</div>
+              <div class="r-note">pH-balanced, non-foaming</div>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">2</span>
+            <div class="r-body">
+              <div class="r-title">Niacinamide Serum</div>
+              <div class="r-note">Pat onto damp skin</div>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">3</span>
+            <div class="r-body">
+              <div class="r-title">Gel Moisturiser</div>
+              <div class="r-note">Thin, even layer</div>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">4</span>
+            <div class="r-body">
+              <div class="r-title">Sunscreen SPF 50+</div>
+              <div class="r-note">Never skip this step</div>
+            </div>
+          </div>
+        </div>
+        <div class="routine-col">
+          <div class="routine-header pm-header">
+            <h3>🌙 Night</h3>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">1</span>
+            <div class="r-body">
+              <div class="r-title">Gentle Cleanser</div>
+              <div class="r-note">Remove the day's buildup</div>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">2</span>
+            <div class="r-body">
+              <div class="r-title">Hyaluronic Acid</div>
+              <div class="r-note">On damp skin</div>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="r-num">3</span>
+            <div class="r-body">
+              <div class="r-title">Gel Moisturiser</div>
+              <div class="r-note">Your skin repairs overnight</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="routine-callout">
+        <strong>Even oily skin needs moisturiser.</strong> Skipping it signals your skin to make more oil. Use a gel-based formula and your skin will balance out over weeks.
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">TIPS FOR SUCCESS 💡</div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>✨ Keep It Minimal</h3>
+          <p>Don't start many actives at once. A simple, consistent routine beats a complicated one every time.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🆕 One at a Time</h3>
+          <p>Introduce one new product at a time. Give each 2 weeks before adding another — so you know what's working.</p>
+        </div>
+        <div class="tip-card">
+          <h3>☀️ SPF is Sacred</h3>
+          <p>Always in the morning. Reapply outdoors. No exceptions, no excuses.</p>
+        </div>
+        <div class="tip-card">
+          <h3>⏰ Be Patient</h3>
+          <p>4–6 weeks for visible results. Consistency is everything. Skin doesn't transform overnight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">WHAT TO EXPECT 📊</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Week 1–2</h3>
+          <p>Skin adjusts to the routine. You may notice minor purging — this is normal and temporary. Hydration improves noticeably.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Week 3–4</h3>
+          <p>Oil control starts getting better. Breakouts begin reducing. Skin texture starts to improve.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Week 5–6</h3>
+          <p>Visible brightness and glow. More even skin tone. Smoother texture. The kind of results that build confidence. ✨</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">QUICK ANSWERS</div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span> Do I really need a routine if I'm young?</div>
+        <div class="faq-a">Yes! Good habits now = amazing skin later. Prevention is far easier than repair.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span> My skin is oily — should I skip moisturiser?</div>
+        <div class="faq-a">No. Oily skin needs hydration too. Use a gel-based, non-comedogenic moisturiser — it will actually reduce oiliness over time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span> Can I skip sunscreen on cloudy days?</div>
+        <div class="faq-a">Never. UV rays penetrate clouds. Daily sunscreen is essential 365 days a year.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span> How long before I see results?</div>
+        <div class="faq-a">Give it 4–6 weeks of consistent use. Visible changes take time — but they do come.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span> What if a product causes irritation?</div>
+        <div class="faq-a">Stop immediately and consult a dermatologist. Never push through skin irritation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <div class="wrapper">
+      <div class="philosophy-card">
+        <div class="small-label">THE PHILOSOPHY BEHIND THIS GUIDE</div>
+        <h2>Inner &amp; Outer Beauty.</h2>
+        <p>Real skincare isn't about looking like someone else — it's about taking care of the skin you're in. These 4 ingredients are a starting point, not a finish line. Be patient, be consistent, and be kind to your skin.</p>
+        <em>Because real glow starts from within.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULT -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">NEED PERSONALISED HELP?</div>
+      <div class="consult-banner">
+        <div class="c-pill">SKIN ETHICS CLINIC · BANER, PUNE</div>
+        <h2>For skincare advice <em>built around you</em></h2>
+        <p>Teen-friendly consultations — we'll understand your unique skin and build a routine that actually works for you.</p>
+        <div class="consult-btns">
+          <a class="btn-primary" href="tel:+919028291234">📞 Call — +91 90282 91234</a>
+          <a class="btn-secondary" href="https://wa.me/919028291234" target="_blank">💬 WhatsApp Dr. Pallavi</a>
+          <a class="btn-secondary" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank">📸 Follow @drpallaviahireshelke</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-header">
+          <h3>Dr. Pallavi Ahire-Shelke</h3>
+          <p class="creds">MBBS, MD, DNB, DDV · Gold Medalist Dermatologist</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cell">
+            <div class="cc-icon">📍</div>
+            <div class="cc-label">Clinic</div>
+            <div class="cc-detail">Skin Ethics Clinic, Baner, Pune</div>
+          </div>
+          <a class="contact-cell" href="tel:+919028291234">
+            <div class="cc-icon">📞</div>
+            <div class="cc-label">Call</div>
+            <div class="cc-detail">+91 90282 91234</div>
+            <div class="cc-action">Book a consultation</div>
+          </a>
+          <a class="contact-cell" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank">
+            <div class="cc-icon">📸</div>
+            <div class="cc-label">Instagram</div>
+            <div class="cc-detail">@drpallaviahireshelke</div>
+            <div class="cc-action">Daily skin education</div>
+          </a>
+          <a class="contact-cell" href="https://wa.me/919028291234" target="_blank">
+            <div class="cc-icon">💬</div>
+            <div class="cc-label">WhatsApp</div>
+            <div class="cc-detail">Quick queries welcome</div>
+            <div class="cc-action">Message us</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    This guide is for educational purposes only and does not replace professional medical advice. Individual skin responses may vary. Consult a qualified dermatologist if you have active skin conditions or concerns.
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Skin Ethics Clinic<br>Baner, Pune<br>+91 90282 91234</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>@drpallaviahireshelke<br>Instagram<br><em>Wholesome Beauty · Inner &amp; Outer</em></p>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV</span>
+      <span>Skin Ethics Clinic, Baner, Pune</span>
+    </div>
+  </footer>
+
+</body>
+</html>

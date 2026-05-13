@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skincare Ingredients Guide · Dr. Pallavi Ahire-Shelke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #1C2B3A;
+      --bg:      #F8F7F4;
+      --white:   #FFFFFF;
+      --accent:  #4A7C8E;
+      --accent2: #7BAFC0;
+      --sage-bg: #EDF4F6;
+      --warn-bg: #F5F0EC;
+      --border:  #D8E4E8;
+      --muted:   #7A8E96;
+      --gold:    #C4956A;
+      --gold-bg: #FBF5EF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .back-nav {
+      background: var(--bg);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-style: italic;
+    }
+    .back-nav a:hover { color: var(--accent); }
+
+    /* HEADER */
+    .site-header {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(74,124,142,0.5) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(196,149,106,0.2) 0%, transparent 55%);
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      border: 1.5px solid var(--accent2);
+      background: var(--white);
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .site-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 6.5vw, 34px);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .site-header h1 em { font-style: italic; color: var(--accent2); }
+    .site-header .subline { color: var(--accent2); font-size: 13px; max-width: 320px; margin: 0 auto 16px; opacity: 0.85; }
+    .site-header .byline { color: var(--muted); font-size: 11px; margin-bottom: 8px; }
+    .site-header .philosophy { font-style: italic; color: var(--muted); font-size: 11px; }
+    .dots { margin: 16px 0 0; color: var(--accent2); letter-spacing: 8px; font-size: 10px; }
+
+    .wrapper { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 28px 0; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* INTRO CARD */
+    .intro-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+    .intro-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .intro-card p { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .intro-card p:last-child { margin-bottom: 0; }
+
+    /* CONCERN CARDS */
+    .concern-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .concern-card:hover { border-color: var(--accent); }
+    .concern-header {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .concern-emoji {
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--sage-bg);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .concern-title-block {}
+    .concern-title-block .concern-tag {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+    .concern-title-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    .concern-body { padding: 16px 20px; }
+
+    .ingredient-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .ing-pill {
+      display: inline-block;
+      background: var(--sage-bg);
+      border: 1.5px solid var(--accent2);
+      color: var(--accent);
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .why-block {
+      background: var(--sage-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .why-block .why-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .why-block p { font-size: 13px; color: var(--dark); margin: 0; }
+
+    .usage-block {
+      background: var(--warn-bg);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .usage-block .usage-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .usage-step {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--dark);
+    }
+    .usage-step:last-child { margin-bottom: 0; }
+    .usage-step .step-dot {
+      width: 18px;
+      height: 18px;
+      background: var(--gold);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .usage-note {
+      background: var(--gold-bg);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--gold);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* DOS DONTS */
+    .dos-donts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 500px) { .dos-donts { grid-template-columns: 1fr; } }
+
+    .do-col, .dont-col {
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .do-col .col-head {
+      background: var(--sage-bg);
+      border-bottom: 2px solid var(--accent);
+      padding: 10px 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--accent);
+    }
+    .dont-col .col-head {
+      background: var(--warn-bg);
+      border-bottom: 2px solid var(--gold);
+      padding: 10px 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--gold);
+    }
+    .do-item, .dont-item {
+      padding: 10px 14px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .do-item { background: var(--white); }
+    .dont-item { background: var(--white); }
+    .do-item:last-child, .dont-item:last-child { border-bottom: none; }
+    .do-item .chk { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .dont-item .x { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    /* DARK BANNER */
+    .dark-banner {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 10%, rgba(74,124,142,0.5) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(196,149,106,0.2) 0%, transparent 55%);
+      border-radius: 18px;
+      padding: 28px 22px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .dark-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .dark-banner p { font-size: 13px; color: var(--accent2); }
+    .dark-banner .pill-white {
+      display: inline-block;
+      border: 1.5px solid var(--accent2);
+      color: var(--accent2);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    /* ACNE CTA */
+    .acne-cta {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 10%, rgba(74,124,142,0.5) 0%, transparent 55%);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .acne-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .acne-cta p { font-size: 13px; color: var(--accent2); margin-bottom: 16px; }
+    .acne-cta .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy-card {
+      background: var(--sage-bg);
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .philosophy-card .small-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .philosophy-card h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card p { font-size: 14px; color: var(--dark); margin-bottom: 14px; }
+    .philosophy-card em { font-style: italic; color: var(--accent); }
+
+    /* ALT BEAUTY */
+    .alt-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .alt-card-header {
+      background: var(--sage-bg);
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .alt-card-header .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+    .alt-card-header h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--dark); }
+    .alt-product-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+      border-bottom: 1px solid var(--border);
+    }
+    .alt-product-row:last-child { border-bottom: none; }
+    .alt-product-row:hover { background: var(--sage-bg); }
+    .alt-emoji { font-size: 26px; width: 42px; height: 42px; background: var(--sage-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .alt-info h4 { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--dark); margin-bottom: 2px; }
+    .alt-info p { font-size: 12px; color: var(--muted); }
+    .alt-info .link { font-size: 11px; color: var(--accent); font-style: italic; }
+
+    /* CONTACT */
+    .contact-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .contact-header {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 85% 15%, rgba(74,124,142,0.5) 0%, transparent 55%);
+      padding: 22px 20px;
+      text-align: center;
+    }
+    .contact-header h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 4px; }
+    .contact-header .creds { font-size: 11px; color: var(--accent2); margin-bottom: 6px; }
+    .contact-header .tagline { font-size: 12px; color: var(--muted); font-style: italic; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 400px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-cell {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+    .contact-cell:nth-child(even) { border-right: none; }
+    .contact-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .contact-cell:hover { background: var(--sage-bg); }
+    .cc-icon { font-size: 18px; margin-bottom: 4px; }
+    .cc-label { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--dark); }
+    .cc-detail { font-size: 11px; color: var(--muted); }
+    .cc-action { font-size: 11px; color: var(--accent); font-style: italic; margin-top: 2px; }
+
+    .disclaimer { text-align: center; font-size: 11px; color: var(--muted); padding: 20px 16px; max-width: 440px; margin: 0 auto; }
+
+    footer {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse at 85% 15%, rgba(74,124,142,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(196,149,106,0.1) 0%, transparent 55%);
+      padding: 28px 20px 0;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 480px; margin: 0 auto; padding-bottom: 20px; }
+    @media (max-width: 400px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col h4 { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 8px; }
+    .footer-col p { font-size: 12px; color: var(--accent2); line-height: 1.6; opacity: 0.8; }
+    .footer-col p em { font-style: italic; opacity: 0.7; }
+    .footer-divider { max-width: 480px; margin: 0 auto; border: none; border-top: 1px solid rgba(74,124,142,0.3); }
+    .footer-bottom { max-width: 480px; margin: 0 auto; display: flex; justify-content: space-between; padding: 12px 0 16px; flex-wrap: wrap; gap: 4px; }
+    .footer-bottom span { font-size: 10px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav class="back-nav">
+    <a href="index.html">← All Guides</a>
+  </nav>
+
+  <header class="site-header">
+    <div class="pill">SKINCARE INGREDIENTS GUIDE</div>
+    <h1>Confused About<br><em>Skincare Ingredients?</em></h1>
+    <p class="subline">Which ingredient works for your skin concern — explained simply by a dermatologist.</p>
+    <p class="byline">Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV · Gold Medalist Dermatologist · Skin Ethics Clinic, Baner, Pune</p>
+    <p class="philosophy">Inner &amp; Outer Beauty · Wholesome Beauty</p>
+    <div class="dots">· · ·</div>
+  </header>
+
+  <!-- INTRO -->
+  <section>
+    <div class="wrapper">
+      <div class="intro-card">
+        <h2>Here's a simple guide that actually helps. 🔬</h2>
+        <p>Skincare shelves are overwhelming — hundreds of products, dozens of ingredients, and very little clarity on what actually does what for your specific concern.</p>
+        <p>This guide cuts through the noise. One concern, one set of ingredients, one clear explanation. Start here — and stop guessing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCERNS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">SKIN CONCERNS &amp; SOLUTIONS</div>
+
+      <!-- Pigmentation -->
+      <div class="concern-card">
+        <div class="concern-header">
+          <div class="concern-emoji">🎭</div>
+          <div class="concern-title-block">
+            <div class="concern-tag">Concern 01</div>
+            <h2>Pigmentation &amp; Uneven Skin Tone</h2>
+          </div>
+        </div>
+        <div class="concern-body">
+          <div class="why-block">
+            <div class="why-label">Best Ingredients</div>
+            <div class="ingredient-pills" style="margin-top:8px;">
+              <span class="ing-pill">Alpha Arbutin</span>
+              <span class="ing-pill">Tannic Acid</span>
+            </div>
+            <p>These ingredients help reduce excess melanin production and gradually improve uneven skin tone — particularly effective for the hyperpigmentation common in Indian skin.</p>
+          </div>
+          <div class="usage-block">
+            <div class="usage-label">How to Use</div>
+            <div class="usage-step"><span class="step-dot">1</span><span>Use as a serum — morning or night</span></div>
+            <div class="usage-step"><span class="step-dot">2</span><span>Apply to clean, dry skin before moisturiser</span></div>
+            <div class="usage-step"><span class="step-dot">3</span><span>Always use sunscreen during the day — without SPF, pigmentation will return</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wrinkles -->
+      <div class="concern-card">
+        <div class="concern-header">
+          <div class="concern-emoji">🕰️</div>
+          <div class="concern-title-block">
+            <div class="concern-tag">Concern 02</div>
+            <h2>Wrinkles &amp; Fine Lines</h2>
+          </div>
+        </div>
+        <div class="concern-body">
+          <div class="why-block">
+            <div class="why-label">Best Ingredients</div>
+            <div class="ingredient-pills" style="margin-top:8px;">
+              <span class="ing-pill">Retinol</span>
+              <span class="ing-pill">Copper Peptides</span>
+            </div>
+            <p>These support collagen production and improve skin texture over time. Retinol accelerates cell turnover; copper peptides stimulate collagen and elastin from within the dermis.</p>
+          </div>
+          <div class="usage-block">
+            <div class="usage-label">How to Use</div>
+            <div class="usage-step"><span class="step-dot">1</span><span>Retinol: night use only — start 2–3 times a week</span></div>
+            <div class="usage-step"><span class="step-dot">2</span><span>Begin with a low concentration (0.025–0.05%) if you're new to retinol</span></div>
+            <div class="usage-step"><span class="step-dot">3</span><span>Always follow with SPF the next morning — retinol increases sun sensitivity</span></div>
+            <div class="usage-note">⚠️ Do not use retinol if pregnant. Consult a dermatologist before starting.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dark Underarms -->
+      <div class="concern-card">
+        <div class="concern-header">
+          <div class="concern-emoji">✨</div>
+          <div class="concern-title-block">
+            <div class="concern-tag">Concern 03</div>
+            <h2>Dark Underarms</h2>
+          </div>
+        </div>
+        <div class="concern-body">
+          <div class="why-block">
+            <div class="why-label">Best Ingredient</div>
+            <div class="ingredient-pills" style="margin-top:8px;">
+              <span class="ing-pill">Glycolic Acid 6–12%</span>
+            </div>
+            <p>Gently exfoliates dead skin cells and helps improve discoloration in the underarm area. 6% is recommended for beginners; up to 12% for those with experience using AHAs.</p>
+          </div>
+          <div class="usage-block">
+            <div class="usage-label">How to Use</div>
+            <div class="usage-step"><span class="step-dot">1</span><span>Night use only</span></div>
+            <div class="usage-step"><span class="step-dot">2</span><span>2–3 times a week — not daily</span></div>
+            <div class="usage-step"><span class="step-dot">3</span><span>Always patch test before first use</span></div>
+            <div class="usage-note">⚠️ Avoid use immediately after shaving or waxing — wait 24 hours.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acne Marks -->
+      <div class="concern-card">
+        <div class="concern-header">
+          <div class="concern-emoji">🔵</div>
+          <div class="concern-title-block">
+            <div class="concern-tag">Concern 04</div>
+            <h2>Skin Spots &amp; Acne Marks</h2>
+          </div>
+        </div>
+        <div class="concern-body">
+          <div class="why-block">
+            <div class="why-label">Best Ingredients</div>
+            <div class="ingredient-pills" style="margin-top:8px;">
+              <span class="ing-pill">Salicylic Acid 12%</span>
+              <span class="ing-pill">Lactic Acid</span>
+            </div>
+            <p>Salicylic acid cleans pores and reduces active breakouts. Lactic acid improves surface texture and brightens post-acne marks. Together, they address both cause and consequence.</p>
+          </div>
+          <div class="usage-block">
+            <div class="usage-label">Best For</div>
+            <div class="usage-step"><span class="step-dot">✓</span><span>Oily and acne-prone skin</span></div>
+            <div class="usage-step"><span class="step-dot">✓</span><span>Post-inflammatory hyperpigmentation (dark spots after pimples)</span></div>
+            <div class="usage-step"><span class="step-dot">✓</span><span>Textured, congested pores</span></div>
+            <div class="usage-note">⚠️ Do not use both acids on the same night — alternate them for better results and less irritation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dark Circles -->
+      <div class="concern-card">
+        <div class="concern-header">
+          <div class="concern-emoji">👁️</div>
+          <div class="concern-title-block">
+            <div class="concern-tag">Concern 05</div>
+            <h2>Dark Circles</h2>
+          </div>
+        </div>
+        <div class="concern-body">
+          <div class="why-block">
+            <div class="why-label">Best Ingredients</div>
+            <div class="ingredient-pills" style="margin-top:8px;">
+              <span class="ing-pill">Arbutin</span>
+              <span class="ing-pill">Low-strength Retinol</span>
+            </div>
+            <p>Arbutin targets pigmentation under the eyes. A very low-strength retinol (0.01–0.025%) can improve skin texture and fine lines around the eye area when used carefully.</p>
+          </div>
+          <div class="usage-block">
+            <div class="usage-label">How to Use</div>
+            <div class="usage-step"><span class="step-dot">1</span><span>Use a rice-grain amount — the under-eye area requires very little product</span></div>
+            <div class="usage-step"><span class="step-dot">2</span><span>Gently tap (do not rub) around the under-eye area using your ring finger</span></div>
+            <div class="usage-step"><span class="step-dot">3</span><span>Night use only for retinol-containing products</span></div>
+            <div class="usage-note">⚠️ The under-eye skin is the thinnest on the face. Avoid overuse and always patch test.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACNE CTA -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">INFLAMED ACNE</div>
+      <div class="acne-cta">
+        <h2>Dealing With Red, Painful, Inflamed Acne?</h2>
+        <p>Not all acne is the same. Using the wrong products on inflamed acne can make it significantly worse. DM Dr. Pallavi on Instagram for a personalised recommendation.</p>
+        <a class="cta-btn" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank">DM @drpallaviahireshelke</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOS AND DONTS -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">SIMPLE DOS &amp; DON'TS</div>
+      <div class="dos-donts">
+        <div class="do-col">
+          <div class="col-head">✔ Do</div>
+          <div class="do-item"><span class="chk">✔</span><span>Patch test every new product before full use</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Use sunscreen every single morning</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Introduce one new active at a time</span></div>
+          <div class="do-item"><span class="chk">✔</span><span>Give products 4–6 weeks before judging results</span></div>
+        </div>
+        <div class="dont-col">
+          <div class="col-head">✕ Don't</div>
+          <div class="dont-item"><span class="x">✕</span><span>Mix multiple strong acids on the same night</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Use retinol without sunscreen the next morning</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Expect overnight results from any active</span></div>
+          <div class="dont-item"><span class="x">✕</span><span>Use prescription-strength actives without guidance</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALT BEAUTY -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">DR. PALLAVI RECOMMENDS</div>
+      <div class="alt-card">
+        <div class="alt-card-header">
+          <div class="label">Alt Beauty · Skin-First Formulations for Indian Skin</div>
+          <h3>Start With the Right Sunscreen</h3>
+        </div>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/products/smart-sunscreen" target="_blank">
+          <div class="alt-emoji">☀️</div>
+          <div class="alt-info">
+            <h4>Alt Beauty Smart Sunscreen</h4>
+            <p>Non-comedogenic, broad-spectrum — essential alongside any active ingredient routine.</p>
+            <span class="link">Shop at thealtbeauty.com →</span>
+          </div>
+        </a>
+        <a class="alt-product-row" href="https://www.thealtbeauty.com/" target="_blank">
+          <div class="alt-emoji">🌿</div>
+          <div class="alt-info">
+            <h4>Explore Full Alt Beauty Range</h4>
+            <p>Thoughtfully formulated serums, moisturisers, and treatments for Indian skin.</p>
+            <span class="link">Visit thealtbeauty.com →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <div class="wrapper">
+      <div class="philosophy-card">
+        <div class="small-label">THE PHILOSOPHY BEHIND THIS GUIDE</div>
+        <h2>Inner &amp; Outer Beauty.</h2>
+        <p>Good skincare isn't about having the most products — it's about understanding what your skin actually needs. Start with one concern, one ingredient, and the patience to let it work. That is how real results happen.</p>
+        <em>Because real glow starts from within.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="wrapper">
+      <div class="section-label">BOOK A CONSULTATION</div>
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Dr. Pallavi Ahire-Shelke</h2>
+          <p class="creds">MBBS, MD, DNB, DDV · Gold Medalist Dermatologist</p>
+          <p class="tagline">For personalised ingredient advice tailored to your skin</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cell">
+            <div class="cc-icon">📍</div>
+            <div class="cc-label">Clinic</div>
+            <div class="cc-detail">Skin Ethics Clinic, Baner, Pune</div>
+          </div>
+          <a class="contact-cell" href="tel:+919028291234">
+            <div class="cc-icon">📞</div>
+            <div class="cc-label">Phone</div>
+            <div class="cc-detail">+91 90282 91234</div>
+            <div class="cc-action">Book a consultation</div>
+          </a>
+          <a class="contact-cell" href="https://www.instagram.com/drpallaviahireshelke/" target="_blank">
+            <div class="cc-icon">📸</div>
+            <div class="cc-label">Instagram</div>
+            <div class="cc-detail">@drpallaviahireshelke</div>
+            <div class="cc-action">Daily skin education</div>
+          </a>
+          <a class="contact-cell" href="https://wa.me/919028291234" target="_blank">
+            <div class="cc-icon">💬</div>
+            <div class="cc-label">WhatsApp</div>
+            <div class="cc-detail">Quick queries welcome</div>
+            <div class="cc-action">Message us</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    This guide is for educational purposes only and does not constitute medical advice. Skincare recommendations are general in nature. Individual skin responses may vary. Please consult a qualified dermatologist before changing your skincare routine.
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Skin Ethics Clinic<br>Baner, Pune<br>+91 90282 91234</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>@drpallaviahireshelke<br>Instagram<br><em>Wholesome Beauty · Inner &amp; Outer</em></p>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>Dr. Pallavi Ahire-Shelke · MBBS, MD, DNB, DDV</span>
+      <span>Skin Ethics Clinic, Baner, Pune</span>
+    </div>
+  </footer>
+
+</body>
+</html>
